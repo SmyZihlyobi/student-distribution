@@ -4,11 +4,12 @@ import pandas as pd
 from services.synthetic import generate_teams, generate_projects, generate_students, generate_team_compatibility, append_data_to_csv, get_next_ids
 
 async def main():
-    total_teams = 1000
+    total_teams = 100
     students_per_team = 5
-    total_projects = 1000
+    total_projects = 100
+    
 
-    batch_size = 20
+    batch_size = 10
 
     base_path = os.path.join('synthetic')
 
@@ -21,6 +22,14 @@ async def main():
                 print(f"Removed {filename}.csv")
             except Exception as e:
                 print(f"Warning: Could not remove {filename}.csv: {e}")
+    
+    next_ids = get_next_ids(base_path)
+    print(f"Initial Next IDs: {next_ids}")
+
+    team_count = 0
+    project_count = 0
+    student_count = 0
+
 
     num_batches = (total_teams + batch_size - 1) // batch_size
 
@@ -31,22 +40,39 @@ async def main():
     print(f"Number of batches: {num_batches}")
     print("---")
 
-    for batch in range(num_batches):
-        current_batch_size = min(batch_size, total_teams - batch * batch_size)
-        current_projects_size = min(batch_size, total_projects - batch * batch_size)
+    all_teams_data = []
+    all_projects_data = []
+    all_students_data = []
 
+
+    for batch in range(num_batches):
+        current_batch_size = min(batch_size, total_teams - team_count)
+        current_projects_size = min(batch_size, total_projects - project_count)
+        
         print(f"Generating batch {batch + 1}/{num_batches}")
         print(f"Teams in batch: {current_batch_size}")
         print(f"Projects in batch: {current_projects_size}")
 
+
         teams_data = generate_teams(current_batch_size)
+        team_ids_in_batch = [x['id'] for x in teams_data]
+        team_count = team_count + len(teams_data)
+
 
         projects_data = generate_projects(current_projects_size)
+        project_ids_in_batch = [x['id'] for x in projects_data]
 
-        total_students = current_batch_size * students_per_team
+        project_count = project_count + len(projects_data)
+
+
+        total_students = len(team_ids_in_batch) * students_per_team 
         students_data = generate_students(total_students, teams_data)
 
-        team_compatibility_data = generate_team_compatibility(teams_data, projects_data, students_data)
+        all_teams_data.extend(teams_data)
+        all_projects_data.extend(projects_data)
+        all_students_data.extend(students_data)
+
+        team_compatibility_data = generate_team_compatibility(all_teams_data, all_projects_data, all_students_data)
 
         all_data = {
             'teams': teams_data,
@@ -55,8 +81,9 @@ async def main():
             'team_compatibility': team_compatibility_data
         }
 
-        # Append data to CSV files
         append_data_to_csv(all_data, base_path=base_path)
+
+
         print(f"Batch {batch + 1} successfully saved")
         print("---")
 
