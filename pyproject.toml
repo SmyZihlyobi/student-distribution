@@ -1,0 +1,16 @@
+[project]
+name = "distribution"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "asyncpg>=0.30.0",
+    "boto3>=1.38.30",
+    "dotenv>=0.9.9",
+    "fastapi>=0.115.12",
+    "google>=3.0.0",
+    "google-generativeai>=0.8.5",
+    "pandas>=2.3.0",
+    "sqlalchemy>=2.0.41",
+]

@@ -1,0 +1,202 @@
+id,username,first_name,last_name,desired_role,resume_text,team_id
+1,ivanov_andrey,Андрей,Иванов,Cloud Engineer,"""Опыт работы с AWS, Kubernetes, Docker""",1
+2,petrov_sergey,Сергей,Петров,Cloud Engineer,"""Знание Terraform, Ansible, опыт автоматизации""",1
+3,sidorova_elena,Елена,Сидорова,Cloud Engineer,"""Опыт работы с сетевыми технологиями, VPN, firewall""",1
+4,vasilev_dmitry,Дмитрий,Васильев,Cloud Engineer,"""Опыт настройки CI/CD пайплайнов, Jenkins, Gitlab""",1
+5,kozlov_alexander,Александр,Козлов,Cloud Engineer,"""Опыт мониторинга, Grafana, Prometheus, логирование""",1
+6,smirnova_anna,Анна,Смирнова,ML Engineer,"""Python, PyTorch, TensorFlow, опыт работы с нейронными сетями""",2
+7,pavlova_olga,Ольга,Павлова,ML Engineer,"""Опыт работы с классическими алгоритмами машинного обучения, Scikit-learn""",2
+8,grigoriev_artem,Артем,Григорьев,ML Engineer,"""Знание SQL, опыт работы с базами данных, PostgreSQL, MySQL""",2
+9,zaitsev_vladimir,Владимир,Зайцев,ML Engineer,"""Опыт работы с Apache Spark, Hadoop""",2
+10,volkov_igor,Игорь,Волков,ML Engineer,"""Опыт деплоя моделей, Kubeflow, Sagemaker""",2
+11,popov_denis,Денис,Попов,Frontend Developer,"""React, JavaScript, HTML, CSS, опыт разработки интерфейсов""",3
+12,kuznetsova_irina,Ирина,Кузнецова,Frontend Developer,"""Vue.js, работа с API, опыт оптимизации производительности""",3
+13,lebedev_maxim,Максим,Лебедев,Frontend Developer,"""Angular, TypeScript, опыт работы с UI/UX""",3
+14,morozov_kirill,Кирилл,Морозов,Frontend Developer,"""Опыт работы с библиотеками компонентов, Material UI, Ant Design""",3
+15,guseva_ekaterina,Екатерина,Гусева,Frontend Developer,"""Опыт работы с системами контроля версий, Git""",3
+16,sobolev_andrey,Андрей,Соболев,Backend Developer,"""Python, Django, Flask, опыт разработки API""",4
+17,tikhonov_artem,Артем,Тихонов,Backend Developer,"""Java, Spring Boot, опыт разработки микросервисов""",4
+18,shcherbakova_maria,Мария,Щербакова,Backend Developer,"""Node.js, Express.js, опыт работы с базами данных""",4
+19,frolov_roman,Роман,Фролов,Backend Developer,"""PHP, Laravel, опыт разработки веб-приложений""",4
+20,koroleva_oksana,Оксана,Королева,Backend Developer,"""Go, опыт работы с высоконагруженными системами""",4
+21,fedotov_nikita,Никита,Федотов,Data Analyst,"""Python, Pandas, NumPy, опыт анализа данных""",5
+22,belyaeva_elena,Елена,Беляева,Data Analyst,"""SQL, опыт работы с базами данных, построение отчетов""",5
+23,stepanov_vladislav,Владислав,Степанов,Data Analyst,"""Опыт визуализации данных, Tableau, Power BI""",5
+24,dyakova_natalia,Наталья,Дьякова,Data Analyst,"""Опыт работы с ETL процессами, Airflow""",5
+25,karpov_sergey,Сергей,Карпов,Data Analyst,"""Статистический анализ, R, опыт работы с моделями""",5
+26,zhukova_daria,Дарья,Жукова,Mobile Developer,"""Swift, опыт разработки iOS приложений""",6
+27,ivanov_alexey,Алексей,Иванов,Mobile Developer,"""Kotlin, опыт разработки Android приложений""",6
+28,kuzmin_igor,Игорь,Кузьмин,Mobile Developer,"""React Native, опыт разработки кроссплатформенных приложений""",6
+29,kalinina_anna,Анна,Калинина,Mobile Developer,"""Flutter, опыт работы с UI/UX""",6
+30,gusev_dmitry,Дмитрий,Гусев,Mobile Developer,"""Опыт работы с REST API, работа с push-уведомлениями""",6
+31,vasileva_olga,Ольга,Васильева,Game Developer,"""Unity, C#, опыт разработки игр""",7
+32,fedoseev_artem,Артем,Федосеев,Game Developer,"""Unreal Engine, C++, опыт работы с физикой""",7
+33,konovalov_maksim,Максим,Коновалов,Game Developer,"""Опыт работы с игровыми движками, Blender, Maya""",7
+34,belov_sergey,Сергей,Белов,Game Developer,"""Опыт разработки многопользовательских игр, сетевое программирование""",7
+35,kolesnikova_irina,Ирина,Колесникова,Game Developer,"""Опыт работы с системами управления версиями, Git""",7
+36,petrova_ekaterina,Екатерина,Петрова,DevOps Engineer,"""Docker, Kubernetes, CI/CD, опыт автоматизации""",8
+37,andreev_vladimir,Владимир,Андреев,DevOps Engineer,"""Terraform, Ansible, опыт работы с облачными сервисами""",8
+38,tikhonova_anastasia,Анастасия,Тихонова,DevOps Engineer,"""Знание Linux, опыт работы с серверами""",8
+39,filatov_denis,Денис,Филатов,DevOps Engineer,"""Опыт мониторинга и логирования, Prometheus, Grafana""",8
+40,borisov_roman,Роман,Борисов,DevOps Engineer,"""Опыт работы с системами управления конфигурациями, Chef, Puppet""",8
+41,sokolov_andrey,Андрей,Соколов,QA Engineer,Опыт ручного и автоматизированного тестирования,9
+42,kuzmina_elena,Елена,Кузьмина,QA Engineer,"""Selenium, Appium, опыт написания тестов""",9
+43,morozova_maria,Мария,Морозова,QA Engineer,"""Опыт тестирования веб-приложений, mobile приложений""",9
+44,volkova_oksana,Оксана,Волкова,QA Engineer,"""Знание методологий тестирования, Agile""",9
+45,efremov_igor,Игорь,Ефремов,QA Engineer,"""Опыт работы с системами управления тестированием, Jira, TestRail""",9
+46,novikova_anna,Анна,Новикова,UI/UX Designer,"""Figma, Adobe XD, опыт разработки пользовательских интерфейсов""",10
+47,ivanov_artem,Артем,Иванов,UI/UX Designer,"""Опыт работы с юзабилити, прототипирование""",10
+48,pavlov_dmitry,Дмитрий,Павлов,UI/UX Designer,"""Исследование пользователей, анализ данных""",10
+49,kolesnikov_kirill,Кирилл,Колесников,UI/UX Designer,"""Создание дизайн-систем, опыт работы с гайдлайнами""",10
+50,ryazanova_oksana,Оксана,Рязанова,UI/UX Designer,"""Опыт работы с мокапами, прототипами, wireframes""",10
+51,egorov_sergey,Сергей,Егоров,Project Manager,"""Управление проектами, Agile, Scrum""",11
+52,vasilyeva_elena,Елена,Васильева,Project Manager,"""Опыт работы с Jira, Confluence""",11
+53,vorobyov_maxim,Максим,Воробьев,Project Manager,Планирование и контроль проектов,11
+54,stepanova_irina,Ирина,Степанова,Project Manager,"""Опыт работы с командой, коммуникации""",11
+55,zaytseva_svetlana,Светлана,Зайцева,Project Manager,"""Управление рисками, бюджетирование""",11
+56,sokolova_anna,Анна,Соколова,Data Scientist,"""Python, R, машинное обучение, анализ данных""",12
+57,kuznetsov_vladimir,Владимир,Кузнецов,Data Scientist,"""Глубокое обучение, TensorFlow, PyTorch""",12
+58,fedotova_olga,Ольга,Федотова,Data Scientist,"""Работа с большими данными, Spark, Hadoop""",12
+59,maksimov_nikita,Никита,Максимов,Data Scientist,"""Опыт работы с компьютерным зрением, OpenCV""",12
+60,grebennikov_roman,Роман,Гребенников,Data Scientist,"""Опыт работы с NLP, Transformers""",12
+61,belova_maria,Мария,Белова,Embedded Engineer,"""C, C++, опыт работы с микроконтроллерами""",13
+62,fedoseev_alexey,Алексей,Федосеев,Embedded Engineer,"""Опыт работы с ARM, STM32""",13
+63,krasnova_ekaterina,Екатерина,Краснова,Embedded Engineer,"""Опыт работы с RTOS, FreeRTOS""",13
+64,ivanova_sergey,Сергей,Иванов,Embedded Engineer,"""Опыт работы с отладчиками, JTAG""",13
+65,popova_elena,Елена,Попова,Embedded Engineer,"""Опыт работы с протоколами связи, SPI, I2C""",13
+66,frolov_denis,Денис,Фролов,Blockchain Developer,"""Solidity, Ethereum, опыт разработки смарт-контрактов""",14
+67,karpova_olga,Ольга,Карпова,Blockchain Developer,"""Опыт работы с Web3.js, Truffle""",14
+68,andreev_alexander,Александр,Андреев,Blockchain Developer,"""Опыт работы с блокчейн-платформами, Hyperledger""",14
+69,kuznetsova_vladimir,Владимир,Кузнецова,Blockchain Developer,"""Опыт работы с криптовалютами, DeFi""",14
+70,petrov_ivan,Иван,Петров,Blockchain Developer,"""Опыт разработки децентрализованных приложений, DApps""",14
+71,semyonov_artem,Артем,Семёнов,Network Engineer,"""Опыт работы с сетевым оборудованием, Cisco, Juniper""",15
+72,fedotova_irina,Ирина,Федотова,Network Engineer,"""Знание протоколов, TCP/IP, DNS, DHCP""",15
+73,koroleva_maksim,Максим,Королева,Network Engineer,"""Опыт работы с маршрутизацией, OSPF, BGP""",15
+74,golubeva_ekaterina,Екатерина,Голубева,Network Engineer,Опыт работы с виртуализацией сетей,15
+75,ivanov_ivan,Иван,Иванов,Network Engineer,"""Опыт работы с системами безопасности сетей, firewall, IPS""",15
+76,pavel_dmitry,Дмитрий,Павел,Security Engineer,"""Опыт работы с SIEM, Splunk, QRadar""",16
+77,kirillov_sergey,Сергей,Кириллов,Security Engineer,"""Анализ уязвимостей, penetration testing""",16
+78,tikhonova_elena,Елена,Тихонова,Security Engineer,"""Опыт работы с системами обнаружения вторжений, IDS/IPS""",16
+79,kuzmin_alexey,Алексей,Кузьмин,Security Engineer,Опыт работы с DLP системами,16
+80,morozov_artem,Артем,Морозов,Security Engineer,"""Опыт работы с криптографией, PKI""",16
+81,volkov_denis,Денис,Волков,Database Administrator,"""MySQL, PostgreSQL, Oracle, опыт администрирования""",17
+82,konovalova_olga,Ольга,Коновалова,Database Administrator,Оптимизация производительности баз данных,17
+83,mikhailov_igor,Игорь,Михайлов,Database Administrator,"""Опыт работы с репликацией, резервным копированием""",17
+84,belov_anastasia,Анастасия,Белова,Database Administrator,"""Опыт работы с NoSQL базами данных, MongoDB, Cassandra""",17
+85,antonova_maxim,Максим,Антонова,Database Administrator,"""Опыт работы с SQL, T-SQL""",17
+86,ignatieva_anna,Анна,Игнатьева,Technical Writer,Опыт написания технической документации,18
+87,sokolov_vladislav,Владислав,Соколов,Technical Writer,"""Опыт работы с Markdown, LaTeX""",18
+88,zaitseva_ekaterina,Екатерина,Зайцева,Technical Writer,"""Опыт работы с инструментами документирования, Confluence""",18
+89,vasilev_anton,Антон,Васильев,Technical Writer,"""Знание языков разметки, XML, HTML""",18
+90,petrova_denis,Денис,Петрова,Technical Writer,"""Опыт работы с различными типами документации, API документация""",18
+91,grigorieva_irinia,Ирина,Григорьева,Hardware Engineer,Опыт работы с электроникой,19
+92,kalinin_alexandr,Александр,Калинин,Hardware Engineer,Знание принципов работы микроконтроллеров,19
+93,shishkina_maria,Мария,Шишкина,Hardware Engineer,Опыт работы с печатными платами,19
+94,maksimov_alexei,Алексей,Максимов,Hardware Engineer,Опыт работы с измерительным оборудованием,19
+95,kolosova_elena,Елена,Колосова,Hardware Engineer,Знание аналоговых и цифровых схем,19
+96,nikolaev_andrei,Андрей,Николаев,Sales Engineer,"""Опыт продаж, технические знания""",20
+97,kozlova_svetlana,Светлана,Козлова,Sales Engineer,"""Опыт работы с клиентами, коммуникации""",20
+98,pavel_vadim,Вадим,Павел,Sales Engineer,Знание технических решений,20
+99,ivanova_natalia,Наталия,Иванова,Sales Engineer,Опыт работы с CRM системами,20
+100,borisova_yana,Яна,Борисова,Sales Engineer,Опыт поиска и привлечения клиентов,20
+
+101,ivanov_ivan,Иван,Иванов,Cloud Engineer,"""Опыт работы с AWS, Kubernetes, Docker""",1
+102,petrov_petr,Петр,Петров,Cloud Engineer,"""Знание Terraform, Ansible, опыт автоматизации""",1
+103,sergeev_sergey,Сергей,Сергеев,Cloud Engineer,"""Опыт работы с Azure, CI/CD, мониторинг""",1
+104,vasiliev_vasily,Василий,Васильев,Cloud Engineer,"""Понимание сетевых технологий, опыт с виртуализацией""",1
+105,smirnov_dmitry,Дмитрий,Смирнов,Cloud Engineer,"""Опыт с GCP, Cloud Functions, опыт деплоя""",1
+106,sidorova_anna,Анна,Сидорова,ML Engineer,"""Python, TensorFlow, опыт работы с большими данными""",2
+107,kuznetsova_maria,Мария,Кузнецова,ML Engineer,"""PyTorch, компьютерное зрение, обработка естественного языка""",2
+108,popov_alexey,Алексей,Попов,ML Engineer,"""Машинное обучение, анализ данных, опыт в R""",2
+109,zaitseva_elena,Елена,Зайцева,ML Engineer,"""Deep learning, нейронные сети, опыт с Keras""",2
+110,novikova_oksana,Оксана,Новикова,ML Engineer,"""Разработка моделей, статистика, опыт с scikit-learn""",2
+111,andreeva_olga,Ольга,Андреева,Backend Developer,"""Python, Django, опыт работы с API""",3
+112,volkov_daniil,Даниил,Волков,Backend Developer,"""Java, Spring Boot, опыт работы с базами данных""",3
+113,gusev_igor,Игорь,Гусев,Backend Developer,"""Node.js, Express, опыт работы с REST API""",3
+114,soboleva_ekaterina,Екатерина,Соболева,Backend Developer,"""PHP, Laravel, опыт работы с серверными приложениями""",3
+115,tikhonov_artem,Артем,Тихонов,Backend Developer,"""Go, опыт разработки микросервисов, Kubernetes""",3
+116,belova_irina,Ирина,Белова,Frontend Developer,"""React, JavaScript, опыт работы с UI/UX""",4
+117,pavlov_vladimir,Владимир,Павлов,Frontend Developer,"""Angular, TypeScript, опыт работы с state management""",4
+118,kozlov_maxim,Максим,Козлов,Frontend Developer,"""Vue.js, JavaScript, опыт разработки SPA""",4
+119,fedotova_natalia,Наталья,Федотова,Frontend Developer,"""HTML, CSS, опыт адаптивной верстки""",4
+120,frolov_denis,Денис,Фролов,Frontend Developer,"""JavaScript, Webpack, опыт с performance""",4
+121,morozov_roman,Роман,Морозов,DevOps Engineer,"""Docker, Kubernetes, опыт CI/CD""",5
+122,golubeva_svetlana,Светлана,Голубева,DevOps Engineer,"""Ansible, Terraform, опыт автоматизации""",5
+123,egorov_aleksandr,Александр,Егоров,DevOps Engineer,"""Linux, Bash, опыт мониторинга""",5
+124,fedorova_anna,Анна,Федорова,DevOps Engineer,"""AWS, Azure, GCP, опыт работы с облаками""",5
+125,grigoriev_artur,Артур,Григорьев,DevOps Engineer,"""Jenkins, GitLab CI, опыт с интеграцией""",5
+126,konovalova_julia,Юлия,Коновалова,Data Analyst,"""SQL, Python, опыт работы с базами данных""",6
+127,shcherbakov_andrey,Андрей,Щербаков,Data Analyst,"""Excel, Tableau, опыт визуализации данных""",6
+128,maksimova_elena,Елена,Максимова,Data Analyst,"""Статистика, R, опыт анализа данных""",6
+129,volkova_oksana,Оксана,Волкова,Data Analyst,"""Big Data, Spark, опыт работы с большими данными""",6
+130,soloviev_sergey,Сергей,Соловьев,Data Analyst,"""Аналитическое мышление, опыт работы с метриками""",6
+131,nikolaev_vadim,Вадим,Николаев,QA Engineer,"""Тестирование, автоматизация, опыт с Selenium""",7
+132,korneeva_yulia,Юлия,Корнеева,QA Engineer,"""Тестирование API, Postman, опыт работы с CI/CD""",7
+133,ivanova_tatiana,Татьяна,Иванова,QA Engineer,"""Тест-дизайн, написание тест-кейсов, опыт""",7
+134,chernyshev_denis,Денис,Чернышев,QA Engineer,"""Автоматизация тестов, Python, опыт""",7
+135,kulikova_ekaterina,Екатерина,Куликова,QA Engineer,"""Мануальное тестирование, опыт в Agile""",7
+136,pavlova_irina,Ирина,Павлова,Project Manager,"""Управление проектами, Agile, Scrum""",8
+137,vasilev_dmitry,Дмитрий,Васильев,Project Manager,"""Планирование, контроль, управление командой""",8
+138,kulikov_artem,Артем,Куликов,Project Manager,"""Коммуникация, решение проблем, опыт""",8
+139,morozova_natalia,Наталья,Морозова,Project Manager,"""Ведение документации, управление рисками""",8
+140,sidorov_alexey,Алексей,Сидоров,Project Manager,"""Опыт работы с Jira, Confluence, опыт""",8
+141,karpova_anna,Анна,Карпова,UX/UI Designer,"""Figma, Adobe XD, опыт создания прототипов""",9
+142,potapov_maxim,Максим,Потапов,UX/UI Designer,"""UI дизайн, опыт работы с интерфейсами""",9
+143,zaytsev_igor,Игорь,Зайцев,UX/UI Designer,"""UX дизайн, опыт исследований, юзабилити""",9
+144,fedoseeva_elena,Елена,Федосеева,UX/UI Designer,"""Дизайн мобильных приложений, опыт""",9
+145,kuzmin_sergey,Сергей,Кузьмин,UX/UI Designer,"""Создание макетов, опыт""",9
+146,volodin_anton,Антон,Володин,Mobile Developer,"""Swift, iOS, опыт разработки приложений""",10
+147,gromova_maria,Мария,Громова,Mobile Developer,"""Kotlin, Android, опыт разработки приложений""",10
+148,smirnova_daria,Дарья,Смирнова,Mobile Developer,"""React Native, опыт разработки кроссплатформенных приложений""",10
+149,belov_vladislav,Владислав,Белов,Mobile Developer,"""Flutter, опыт разработки приложений""",10
+150,nikolaev_roman,Роман,Николаев,Mobile Developer,"""Native development, experience""",10
+151,savelyev_kirill,Кирилл,Савельев,Network Engineer,"""Cisco, маршрутизация, коммутация""",11
+152,tikhonova_elena,Елена,Тихонова,Network Engineer,"""Сетевая безопасность, VPN, Firewall""",11
+153,stepanov_vladimir,Владимир,Степанов,Network Engineer,"""TCP/IP, DNS, DHCP""",11
+154,karpov_sergey,Сергей,Карпов,Network Engineer,Опыт работы с сетевым оборудованием,11
+155,zaharova_anna,Анна,Захарова,Network Engineer,"""Troubleshooting, monitoring""",11
+156,ignatiev_oleg,Олег,Игнатьев,Security Engineer,"""Опыт работы с SIEM, опыт с защитой""",12
+157,klimova_oksana,Оксана,Климова,Security Engineer,"""Анализ уязвимостей, пентест""",12
+158,pavlov_artem,Артем,Павлов,Security Engineer,"""Безопасность сетей, опыт""",12
+159,vlasova_natalia,Наталья,Власова,Security Engineer,"""Криптография, опыт""",12
+160,fedotov_denis,Денис,Федотов,Security Engineer,"""Compliance, experience""",12
+161,antonova_julia,Юлия,Антонова,Business Analyst,"""Сбор требований, анализ данных""",13
+162,sazonov_ivan,Иван,Сазонов,Business Analyst,"""Бизнес-процессы, моделирование""",13
+163,konovalova_maria,Мария,Коновалова,Business Analyst,"""Анализ рынка, опыт""",13
+164,zueva_andrea,Андрей,Зуева,Business Analyst,"""Документирование, опыт""",13
+165,frolova_elena,Елена,Фролова,Business Analyst,"""Коммуникация, опыт""",13
+166,soboleva_olga,Ольга,Соболева,Database Administrator,"""SQL, PostgreSQL, опыт""",14
+167,volkov_sergey,Сергей,Волков,Database Administrator,"""MySQL, оптимизация, опыт""",14
+168,kozlova_irina,Ирина,Козлова,Database Administrator,"""Oracle, резервное копирование""",14
+169,tikhonov_vadim,Вадим,Тихонов,Database Administrator,"""MongoDB, шардинг, опыт""",14
+170,zharov_evgeny,Евгений,Жаров,Database Administrator,"""Data modeling, опыт""",14
+171,guseva_svetlana,Светлана,Гусева,Sales Manager,"""Продажи, коммуникация, опыт""",15
+172,chernova_daria,Дарья,Чернова,Sales Manager,"""CRM, опыт работы с клиентами""",15
+173,kuznetsov_anton,Антон,Кузнецов,Sales Manager,"""Поиск клиентов, опыт""",15
+174,popova_elena,Елена,Попова,Sales Manager,"""Ведение переговоров, опыт""",15
+175,ivanova_daria,Дарья,Иванова,Sales Manager,"""Sales management, опыт""",15
+176,kalinina_maria,Мария,Калинина,Marketing Manager,"""Digital marketing, SMM, опыт""",16
+177,frolov_pavel,Павел,Фролов,Marketing Manager,"""Контент-маркетинг, опыт""",16
+178,golubeva_anna,Анна,Голубева,Marketing Manager,"""SEO, SEM, опыт""",16
+179,krasilnikov_maxim,Максим,Красильников,Marketing Manager,"""Аналитика, ROI, опыт""",16
+180,sidorova_elena,Елена,Сидорова,Marketing Manager,"""Email marketing, опыт""",16
+181,volkov_alexey,Алексей,Волков,Technical Writer,"""Документация, технический английский""",17
+182,egorova_maria,Мария,Егорова,Technical Writer,"""Руководства пользователя, опыт""",17
+183,sergeev_nikita,Никита,Сергеев,Technical Writer,"""API документация, опыт""",17
+184,kulikova_yulia,Юлия,Куликова,Technical Writer,"""Создание гайдов, опыт""",17
+185,pavlova_daria,Дарья,Павлова,Technical Writer,"""Редактирование, опыт""",17
+186,petrova_oksana,Оксана,Петрова,HR Manager,"""Подбор персонала, опыт""",18
+187,sokolova_andrea,Андрей,Соколова,HR Manager,"""Оценка персонала, опыт""",18
+188,morozov_ivan,Иван,Морозов,HR Manager,"""Адаптация сотрудников, опыт""",18
+189,zaitseva_ekaterina,Екатерина,Зайцева,HR Manager,"""HR аналитика, опыт""",18
+190,ignatieva_maria,Мария,Игнатьева,HR Manager,"""Управление мотивацией, опыт""",18
+191,konstantinova_svetlana,Светлана,Константинова,Financial Analyst,"""Финансовый анализ, опыт""",19
+192,fedotov_artur,Артур,Федотов,Financial Analyst,"""Бюджетирование, опыт""",19
+193,smirnova_olga,Ольга,Смирнова,Financial Analyst,"""Финансовое моделирование, опыт""",19
+194,volkova_vladimir,Владимир,Волкова,Financial Analyst,"""Управление рисками, опыт""",19
+195,vasiliev_nikita,Никита,Васильев,Financial Analyst,"""Финансовая отчетность, опыт""",19
+196,kuzmin_alexey,Алексей,Кузьмин,Legal Counsel,"""Договорное право, опыт""",20
+197,novikov_elena,Елена,Новикова,Legal Counsel,"""Корпоративное право, опыт""",20
+198,maksimova_andrey,Андрей,Максимова,Legal Counsel,"""Интеллектуальная собственность, опыт""",20
+199,gromov_igor,Игорь,Громов,Legal Counsel,"""Compliance, опыт""",20
+200,belova_natalia,Наталья,Белова,Legal Counsel,"""Legal research, опыт""",20
