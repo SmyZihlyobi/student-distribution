@@ -1,42 +1,117 @@
 id,team_name,specialization
-1,CloudCoders,Cloud Engineering
-2,MLMasters,Machine Learning
-3,DataDragons,Data Science
-4,DevOpsDynamos,DevOps
-5,WebWarriors,Web Development
-6,CloudCrusaders,Cloud Engineering
-7,MLMages,Machine Learning
-8,DataDolphins,Data Science
-9,DevOpsDevils,DevOps
-10,WebWizards,Web Development
-11,CloudCommanders,Cloud Engineering
-12,MLMonsters,Machine Learning
-13,DataDetectives,Data Science
-14,DevOpsDefenders,DevOps
-15,WebWeavers,Web Development
-16,CloudChampions,Cloud Engineering
-17,MLLearners,Machine Learning
-18,DataDinos,Data Science
-19,DevOpsDreamTeam,DevOps
-20,WebZephyrs,Web Development
-
-21,CloudCoders,Cloud
-22,MLMasters,ML
-23,DataDreamers,Data
-24,DevOpsDynamos,DevOps
-25,WebWeavers,Web
-26,CloudShapers,Cloud
-27,MLMinds,ML
-28,DataDominators,Data
-29,DevOpsDefenders,DevOps
-30,WebWizards,Web
-31,CloudCrackers,Cloud
-32,MLInnovators,ML
-33,DataDetectives,Data
-34,DevOpsDevelopers,DevOps
-35,WebWarriors,Web
-36,CloudClimbers,Cloud
-37,MLMavericks,ML
-38,DataDiggers,Data
-39,DevOpsArchers,DevOps
-40,WebVoyagers,Web
+1,NovaCloud,Cloud
+2,DataSlicers,Data
+3,DevOpsDynamo,DevOps
+4,WebWizards,Web
+5,MLMakers,ML
+6,CloudCruisers,Cloud
+7,DataDominators,Data
+8,DevOpsDefenders,DevOps
+9,WebWarriors,Web
+10,MLMasters,ML
+11,CloudCommandos,Cloud
+12,DataDragons,Data
+13,DevOpsVanguards,DevOps
+14,WebVoyagers,Web
+15,MLMarvels,ML
+16,CloudCatalysts,Cloud
+17,DataDetectives,Data
+18,DevOpsDevelopers,DevOps
+19,WebWeavers,Web
+20,MLMiracles,ML
+21,CloudSurfers,Cloud
+22,DataKnights,Data
+23,DevOpsNinjas,DevOps
+24,WebWarriors,Web
+25,MLGenius,ML
+26,CloudAvengers,Cloud
+27,DataDragons,Data
+28,DevOpsCommandos,DevOps
+29,WebGurus,Web
+30,MLInnovators,ML
+31,CloudTitans,Cloud
+32,DataVanguards,Data
+33,DevOpsMavericks,DevOps
+34,WebAlchemists,Web
+35,MLVisionaries,ML
+36,CloudStrikers,Cloud
+37,DataGuardians,Data
+38,DevOpsPioneers,DevOps
+39,WebMasters,Web
+40,MLArchitects,ML41,CloudStratus,Cloud
+42,DataWizards,Data
+43,MLVision,ML
+44,DevOpsNinjas,DevOps
+45,WebSurfers,Web
+46,CloudHarvesters,Cloud
+47,DataMiners,Data
+48,MLInsight,ML
+49,DevOpsPilots,DevOps
+50,WebCoders,Web
+51,CloudFusion,Cloud
+52,DataCrunchers,Data
+53,MLSpark,ML
+54,DevOpsForge,DevOps
+55,WebCrafters,Web
+56,CloudAtlas,Cloud
+57,DataVoyagers,Data
+58,MLNeurons,ML
+59,DevOpsEngineers,DevOps
+60,WebArchitects,Web1,SwiftCloud,Cloud
+2,DataManiacs,Data
+3,DevOpsNinjas,DevOps
+4,WebWizards,Web
+5,MLAvengers,ML
+6,CloudCruisers,Cloud
+7,DataDynamos,Data
+8,DevOpsDrones,DevOps
+9,WebWarriors,Web
+10,MLMavericks,ML
+11,CloudCommanders,Cloud
+12,DataDefenders,Data
+13,DevOpsDynamite,DevOps
+14,WebVoyagers,Web
+15,MLMystics,ML
+16,CloudChargers,Cloud
+17,DataDominators,Data
+18,DevOpsDragons,DevOps
+19,WebWhispers,Web
+20,MLMagicians,ML1,AlphaCloud,Cloud
+2,BetaML,ML
+3,GammaData,Data
+4,DeltaDevOps,DevOps
+5,EpsilonWeb,Web
+6,ZetaCloud,Cloud
+7,EtaML,ML
+8,ThetaData,Data
+9,IotaDevOps,DevOps
+10,KappaWeb,Web
+11,LambdaCloud,Cloud
+12,MuML,ML
+13,NuData,Data
+14,XiDevOps,DevOps
+15,OmicronWeb,Web
+16,PiCloud,Cloud
+17,RhoML,ML
+18,SigmaData,Data
+19,TauDevOps,DevOps
+20,UpsilonWeb,Web1,CloudStratus,Cloud
+2,DataVoyagers,Data
+3,MLSpark,ML
+4,DevOpsDynamo,DevOps
+5,WebWeavers,Web
+6,CloudNexus,Cloud
+7,MLMinds,ML
+8,DataGurus,Data
+9,DevOpsEngineers,DevOps
+10,WebCoders,Web
+11,CloudAlphas,Cloud
+12,MLVision,ML
+13,DataStorm,Data
+14,DevOpsSwift,DevOps
+15,WebInnovators,Web
+16,CloudPilots,Cloud
+17,MLQuantum,ML
+18,DataMasters,Data
+19,DevOpsTitans,DevOps
+20,WebCrafters,Web

@@ -5,301 +5,309 @@ import io
 import os
 import re
 import csv
+from typing import Dict, List
 
 genai.configure(api_key=settings.AI)
 model = genai.GenerativeModel('gemini-2.0-flash-lite')
 
-def generate_synthetic_data(num_teams=2, num_students_per_team=5, num_projects=3):
-    """
-    Generates synthetic data for teams, students, projects, and team-project compatibility.
-    """
-    # Generate Teams
-    team_response = model.generate_content(f"""
-    Сгенерируй {num_teams} синтетические команды студентов в формате CSV. 
+def csv_to_dict_list(csv_data: str) -> List[Dict[str, str]]:
+    """Преобразует CSV строку в список словарей."""
+    csv_data = re.sub(r'```csv\n|```\n', '', csv_data)
+    csv_data = csv_data.strip()
 
+    lines = csv_data.split('\n')
+    if not lines:
+        return []
+
+    headers = [h.strip() for h in lines[0].split(',')]
+
+    result = []
+    for line in lines[1:]:
+        if not line.strip():
+            continue
+
+        fields = []
+        current_field = []
+        in_quotes = False
+
+        for char in line:
+            if char == '"':
+                in_quotes = not in_quotes
+                current_field.append(char)
+            elif char == ',' and not in_quotes:
+                fields.append(''.join(current_field).strip().strip('"'))
+                current_field = []
+            else:
+                current_field.append(char)
+
+        if current_field:
+            fields.append(''.join(current_field).strip().strip('"'))
+
+        if len(fields) == len(headers):
+            row_dict = dict(zip(headers, fields))
+            result.append(row_dict)
+
+    return result
+
+def generate_teams(num_teams: int) -> List[Dict[str, str]]:
+    """Генерирует данные для команд."""
+    teams_prompt = f"""Сгенерируй {num_teams} команд в CSV формате.
     Формат:
 
     id,team_name,specialization
-    1,CloudTeam,"Cloud Engineering"
-    2,MLTeam,"Machine Learning"
+    1,CloudTeam,Cloud
+    2,MLTeam,ML
 
-    Специализации: Cloud, ML, Data, DevOps, Web.
-    """)
-    teams_csv = team_response.text
+    Specializations: Cloud, ML, Data, DevOps, Web.  Team name и specialization должны быть на English.
+    """
+    team_response = model.generate_content(teams_prompt)
+    teams_data = csv_to_dict_list(team_response.text)
+    return teams_data
 
-    # Generate Students
-    students_response = model.generate_content(f"""
-    Сгенерируй {num_teams * num_students_per_team} студентов (по {num_students_per_team} для каждой из {num_teams} команд) в формате CSV. 
+def generate_projects(num_projects: int) -> List[Dict[str, str]]:
+    """Генерирует данные для проектов."""
+    projects_prompt = f"""Сгенерируй {num_projects} проектов в CSV формате.
+    Формат:
+
+    id,name,description,stack,required_roles,teams_amount,company_id,direction
+    1,"ML Platform","Разработка платформы для ML","Python, PyTorch, Docker","ML Engineer, DevOps Engineer",2,1,ML
+    2,"Cloud Migration","Миграция в облако","AWS, Terraform, Python","Cloud Engineer, DevOps Engineer",1,2,Cloud
+
+    Directions: ML, Cloud, Data, DevOps, Web. Project names, stacks and roles should all be in English.
+    descriptions должен быть на русском и описывать проект и необходимые навыки.
+    """
+    projects_response = model.generate_content(projects_prompt)
+    projects_data = csv_to_dict_list(projects_response.text)
+    return projects_data
+
+def generate_students(num_students: int, teams: List[Dict[str, str]]) -> List[Dict[str, str]]:
+    """Generates data for students and assigns them to teams."""
+
+    students_prompt = f"""Сгенерируй {num_students} студентов в CSV формате. Прикрепи их к командам.
 
     Формат:
 
     id,username,first_name,last_name,desired_role,resume_text,team_id
+    1,ivanov_i,Ivan,Ivanov,"Python Developer","Навыки: Python, Django, Flask",1
+    2,petrov_p,Petr,Petrov,"ML Engineer","Навыки: ML, PyTorch, scikit-learn",1
 
-    Пример для CloudTeam:
+    For the team_id, choose a team from the following options: {", ".join([team["id"] for team in teams])}.  The number of students per team should be roughly equal.
 
-    1,bochkarev_egor,Егор,Бочкарёв,"Cloud Engineer",
-    "Технологии: AWS, Terraform, Docker", 1
+    Roles: Python Developer, ML Engineer, Data Scientist, DevOps Engineer, Frontend Developer, Backend Developer. All text should be in English.
+    resume_text должен содержать навыки студента на русском языке.
+    """
+    students_response = model.generate_content(students_prompt)
+    students_data = csv_to_dict_list(students_response.text)
+    return students_data
 
-    Пример для MLTeam:
+def generate_team_compatibility(teams: List[Dict[str, str]], projects: List[Dict[str, str]], students: List[Dict[str, str]]) -> List[Dict[str, str]]:
+    """Генерирует совместимость между командами и проектами, учитывая данные студентов."""
 
-    6,ivanova_anna,Анна,Иванова,"ML Engineer",
-    "Технологии: Python, PyTorch, TensorFlow", 2
+    team_skills = {}
+    for team in teams:
+        team_id = team['id']
+        team_skills[team_id] = []
+        for student in students:
+            if student['team_id'] == team_id:
+                team_skills[team_id].append(student['resume_text'])
 
-    Учти, что командам присвоены id от 1 до {num_teams}.
-    """)
-    students_csv = students_response.text
+    formatted_teams = "\n".join([f"{team['id']}: {team['team_name']} ({team['specialization']}). Skills: {', '.join(team_skills.get(team['id'], []))}" for team in teams])
+    formatted_projects = "\n".join([f"{project['id']}: {project['name']} ({project['description']})" for project in projects])
 
-    # Generate Projects
-    projects_response = model.generate_content(f"""
-    Сгенерируй {num_projects} проекта для IT-компаний в формате CSV. 
+    compatibility_prompt = f"""
+    Given the following teams, projects, and student skills, generate a table of team and project compatibility scores in CSV format.
 
-    Формат:
+    Teams:
+    {formatted_teams}
 
-    id,name,description,stack,required_roles,teams_amount,company_id,direction
+    Projects:
+    {formatted_projects}
 
-    Пример:
-
-    1,"Разработка ML-модели для анализа данных",
-    "Проект требует команды из 5 ML-инженеров",
-    "Python, PyTorch, TensorFlow",
-    "ML Engineer, Data Scientist", 1, 1, "ML"
-
-    Учитывай:
-    - `teams_amount` — количество команд, которые могут работать над проектом.
-    - `required_roles` — роли, которые должны быть в команде (например, "ML Engineer, Data Scientist").
-    - `description` - описание проекта в котором часто указывают необходимые навыки
-    """)
-    projects_csv = projects_response.text
-
-    # Generate Team Compatibility
-    team_compatibility_response = model.generate_content(f"""
-    Сгенерируй таблицу совместимости команд и проектов в формате CSV. 
-
-    Формат:
+    Format:
 
     team_id,project_id,compatibility_score
+    1,1,0.85
+    1,2,0.45
+    2,1,0.65
+    2,2,0.90
 
-    Пример:
-
-    1,1,0.2 # CloudTeam и ML-проект — низкая совместимость
-    2,1,0.9 # MLTeam и ML-проект — высокая совместимость
-
-    Правила:
-    1. Если у команды и проекта совпадает специализация (например, ML и ML) → score 0.8-1.0.
-    2. Если частично совпадают технологии → score 0.4-0.7.
-    3. Если нет пересечений → score 0.0-0.3.
-
-    Сгенерируй данные для {num_teams} команд и {num_projects} проектов.
-    """)
-    team_compatibility_csv = team_compatibility_response.text
-
-    return {
-        "teams": teams_csv,
-        "students": students_csv,
-        "projects": projects_csv,
-        "team_compatibility": team_compatibility_csv
-    }
-
-def parse_csv_string(csv_string):
-    """Parses a CSV string into a list of lists."""
-    f = io.StringIO(csv_string)
-    reader = csv.reader(f)
-    return list(reader)
-
-def csv_string_from_list(data):
-    """Converts a list of lists to a CSV string."""
-    f = io.StringIO()
-    writer = csv.writer(f)
-    writer.writerows(data)
-    return f.getvalue().strip()
-
-def clean_csv_data(csv_data):
+    The compatibility score should be a number between 0 and 1, representing how well suited a team is for a project. Base the score on the team's specialization, the project's description, stack, required roles, AND the skills of the students in each team. A higher score means a better fit.
+    Each possible team/project combination must have an entry. All data and descriptions are in English. Do not leave anything out.
     """
-    Очищает и форматирует CSV данные для корректного сохранения.
-    """
-    # Удаляем маркеры кода, пустые строки и лишние пробелы
-    csv_data = re.sub(r"```csv\n|```", "", csv_data)
-    csv_data = re.sub(r'\n\s*\n', '\n', csv_data)  # Удаляем пустые строки
+
+    compatibility_response = model.generate_content(compatibility_prompt)
+    compatibility_data = csv_to_dict_list(compatibility_response.text)
+    return compatibility_data
+
+def clean_csv_data(csv_data: str) -> str:
+    """Очищает и форматирует CSV данные."""
+    csv_data = re.sub(r'```csv\n|```\n', '', csv_data)
+    csv_data = re.sub(r'\n\s*\n', '\n', csv_data)
     csv_data = csv_data.strip()
-    
-    # Читаем данные как CSV
-    reader = csv.reader(io.StringIO(csv_data))
-    rows = [row for row in reader if any(row)]  # Пропускаем полностью пустые строки
-    
-    # Форматируем каждую строку
-    formatted_rows = []
-    for row in rows:
-        # Экранируем поля, содержащие запятые
-        formatted_row = []
-        for field in row:
-            field = field.strip()
-            if not field:  # Пропускаем пустые поля
-                field = ""
-            elif ',' in field and not (field.startswith('"') and field.endswith('"')):
-                # Удаляем лишние кавычки внутри поля
-                field = field.replace('"', '')
+
+    lines = csv_data.split('\n')
+    cleaned_lines = []
+
+    for line in lines:
+        if not line.strip():
+            continue
+
+        fields = []
+        current_field = []
+        in_quotes = False
+
+        for char in line:
+            if char == '"':
+                in_quotes = not in_quotes
+                current_field.append(char)
+            elif char == ',' and not in_quotes:
+                fields.append(''.join(current_field).strip())
+                current_field = []
+            else:
+                current_field.append(char)
+
+        if current_field:
+            fields.append(''.join(current_field).strip())
+
+        processed_fields = []
+        for field in fields:
+            if ',' in field and not (field.startswith('"') and not field.endswith('"')) :
                 field = f'"{field}"'
-            formatted_row.append(field)
-        if any(formatted_row):  # Добавляем только непустые строки
-            formatted_rows.append(formatted_row)
-    
-    # Преобразуем обратно в CSV строку
-    output = io.StringIO()
-    writer = csv.writer(output, quoting=csv.QUOTE_MINIMAL)
-    writer.writerows(formatted_rows)
-    return output.getvalue()
 
-def get_next_ids(base_path="synthetic"):
-    """
-    Получает следующие доступные ID для каждой сущности.
-    """
-    next_ids = {
-        "team": 1,
-        "student": 1,
-        "project": 1
-    }
-    
-    try:
-        # Проверяем существующие файлы
-        for entity in ["teams", "students", "projects"]:
-            filepath = os.path.join(base_path, f"{entity}.csv")
-            if os.path.exists(filepath):
-                try:
-                    df = pd.read_csv(filepath, encoding='cp1251')
-                    if not df.empty:
-                        next_ids[entity[:-1]] = int(df['id'].max()) + 1
-                except Exception as e:
-                    print(f"Warning: Could not read {entity}.csv: {e}")
-    except Exception as e:
-        print(f"Warning: Error getting next IDs: {e}")
-    
-    return next_ids
+            processed_fields.append(field)
 
-def update_ids_in_data(data, next_ids):
-    """
-    Обновляет ID в сгенерированных данных.
-    """
+        cleaned_lines.append(','.join(processed_fields))
+
+    return '\n'.join(cleaned_lines)
+
+def update_ids_in_data(data: Dict[str, List[Dict]], next_ids: Dict[str, int]) -> Dict[str, List[Dict]]:
+    """Обновляет ID в данных, используя следующие доступные ID."""
     updated_data = {}
-    
-    for filename, csv_data in data.items():
-        # Очищаем данные
-        cleaned_data = clean_csv_data(csv_data)
-        reader = csv.reader(io.StringIO(cleaned_data))
-        rows = list(reader)
-        
-        if not rows:
+
+    for data_type, items in data.items():
+        if data_type == 'team_compatibility':
             continue
-            
-        header = rows[0]
-        data_rows = rows[1:]
-        
-        # Определяем тип данных и соответствующий ID
-        if filename == "teams":
-            current_id = next_ids["team"]
-            id_field = 0  # ID находится в первом поле
-        elif filename == "students":
-            current_id = next_ids["student"]
-            id_field = 0
-        elif filename == "projects":
-            current_id = next_ids["project"]
-            id_field = 0
-            # Для проектов также обновляем company_id
-            company_id_field = 6  # Индекс поля company_id
-            current_company_id = 1
-        else:
-            updated_data[filename] = cleaned_data
+
+        if not items:
+            updated_data[data_type] = []
             continue
-        
-        # Обновляем ID
-        updated_rows = [header]
-        for row in data_rows:
-            if len(row) > id_field:
-                # Создаем копию строки для изменения
-                new_row = row.copy()
-                # Обновляем ID
-                new_row[id_field] = str(current_id)
-                current_id += 1
-                
-                # Для проектов обновляем company_id
-                if filename == "projects" and len(new_row) > company_id_field:
-                    new_row[company_id_field] = str(current_company_id)
-                    current_company_id = (current_company_id % 10) + 1  # Цикл от 1 до 10
-                
-                updated_rows.append(new_row)
-        
-        # Преобразуем обратно в CSV
-        output = io.StringIO()
-        writer = csv.writer(output, quoting=csv.QUOTE_MINIMAL)
-        writer.writerows(updated_rows)
-        updated_data[filename] = output.getvalue()
-    
+
+        updated_items = []
+        for item in items:
+            updated_item = item.copy()
+
+            if data_type == 'teams':
+                updated_item['id'] = str(next_ids['teams'])
+                next_ids['teams'] += 1
+            elif data_type == 'students':
+                updated_item['id'] = str(next_ids['students'])
+                next_ids['students'] += 1
+            elif data_type == 'projects':
+                updated_item['id'] = str(next_ids['projects'])
+                company_id = (next_ids['projects'] - 1) % 10 + 1
+                updated_item['company_id'] = str(company_id)
+                next_ids['projects'] += 1
+
+            updated_items.append(updated_item)
+
+        updated_data[data_type] = updated_items
+    team_id_mapping = {}
+    project_id_mapping = {}
+
+    for item in updated_data.get('teams', []):
+        team_id_mapping[item['id']] = item['id']
+
+    for item in updated_data.get('projects', []):
+        project_id_mapping[item['id']] = item['id']
+    if 'team_compatibility' in data:
+        updated_compatibility = []
+        for item in data['team_compatibility']:
+            updated_item = item.copy()
+            old_team_id = item['team_id']
+            old_project_id = item['project_id']
+            if old_team_id in team_id_mapping and old_project_id in project_id_mapping:
+                updated_item['team_id'] = team_id_mapping[old_team_id]
+                updated_item['project_id'] = project_id_mapping[old_project_id]
+                updated_compatibility.append(updated_item)
+
+        updated_data['team_compatibility'] = updated_compatibility
+
     return updated_data
 
-def append_data_to_csv(data, base_path="synthetic"):
-    """
-    Appends the generated data to existing CSV files with proper ID handling.
-    """
+def get_next_ids(base_path: str = "synthetic") -> Dict[str, int]:
+    """Получает следующие доступные ID для каждого типа данных."""
+    next_ids = {
+        'teams': 1,
+        'students': 1,
+        'projects': 1
+    }
+
+    for data_type in ['teams', 'students', 'projects']:
+        file_path = os.path.join(base_path, f"{data_type}.csv")
+        if os.path.exists(file_path):
+            try:
+                df = pd.read_csv(file_path, encoding='cp1251')
+                if 'id' in df.columns and not df.empty:
+                    next_ids[data_type] = int(df['id'].max()) + 1
+            except Exception as e:
+                print(f"Warning: Could not read {data_type}.csv: {e}")
+
+    return next_ids
+
+def dict_list_to_csv_string(data: List[Dict[str, str]], headers: List[str]) -> str:
+    """Converts a list of dictionaries to a CSV string."""
+    output = io.StringIO()
+    writer = csv.writer(output, quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
+
+    writer.writerow(headers)
+    for item in data:
+        row = [item.get(header, "") for header in headers]
+        writer.writerow(row)
+
+    return output.getvalue()
+
+def append_data_to_csv(all_data: Dict[str, List[Dict]], base_path: str = 'synthetic') -> None:
+    """Добавляет данные в CSV файлы с правильной обработкой ID."""
     os.makedirs(base_path, exist_ok=True)
-    
-    # Получаем следующие доступные ID
+
     next_ids = get_next_ids(base_path)
-    
-    # Обновляем ID в данных
-    updated_data = update_ids_in_data(data, next_ids)
-    
-    for filename, csv_data in updated_data.items():
-        filepath = os.path.join(base_path, f"{filename}.csv")
-        try:
-            # Проверяем существование файла и его содержимое
-            file_exists = os.path.exists(filepath)
+    print(f"Next IDs: {next_ids}")
 
-            # Очищаем данные CSV *перед* записью в файл
-            cleaned_csv_data = clean_csv_data(csv_data) # Clean data first
-            
-            if file_exists:
-                try:
-                    df = pd.read_csv(filepath, encoding='cp1251')
-                    is_empty = len(df) == 0
-                except Exception as e:
-                    print(f"Warning: Could not read existing {filename}.csv: {e}")
-                    is_empty = True
+    updated_data = update_ids_in_data(all_data, next_ids)
+    print("Updated data", updated_data)
+
+    headers = {
+        'teams': ['id', 'team_name', 'specialization'],
+        'students': ['id', 'username', 'first_name', 'last_name', 'desired_role', 'resume_text', 'team_id'],
+        'projects': ['id', 'name', 'description', 'stack', 'required_roles', 'teams_amount', 'company_id', 'direction'],
+        'team_compatibility': ['team_id', 'project_id', 'compatibility_score']
+    }
+
+    for data_type, items in updated_data.items():
+        file_path = os.path.join(base_path, f"{data_type}.csv")
+        print(f"Writing data to {file_path}")
+
+        csv_data = dict_list_to_csv_string(items, headers[data_type])
+        file_exists = os.path.exists(file_path)
+
+        with open(file_path, 'a', encoding='cp1251', newline='') as f:
+            if not file_exists:
+                f.write(csv_data)
             else:
-                is_empty = True #If the file doesn't exist, it is "empty"
+                lines = csv_data.splitlines()
+                f.write('\n'.join(lines[1:]))
+            print(f"Data saved to {file_path}")
 
-            # Записываем данные
-            if file_exists and not is_empty:
-                # Append to existing file, skipping the header
-                lines = cleaned_csv_data.splitlines()
-                if len(lines) > 1: # Check if cleaned_csv_data has data rows
-                    data_without_header = '\n'.join(lines[1:]) # Skip header
-                    with open(filepath, "a", encoding='cp1251', newline='') as f: # use newline=''
-                        f.write(data_without_header + '\n')
-                else:
-                    print(f"Skipping append for {filename}.csv because there are no data rows.")
-            else:
-                # Write to new file, including the header
-                with open(filepath, "w", encoding='cp1251', newline='') as f: # use newline=''
-                    f.write(cleaned_csv_data + '\n') # Write cleaned data
+def team_project_matrix(teams: List[Dict[str, str]], projects: List[Dict[str, str]], compatibility: List[Dict[str, str]]):
+    print ("Here is team project compatiability matrix")
+    team_ids = [team['id'] for team in teams]
+    project_ids = [project['id'] for project in projects]
+    matrix = pd.DataFrame(index=team_ids, columns=project_ids)
 
-            print(f"Data appended to {filename}.csv successfully.")
+    for row in compatibility:
+        team_id = row['team_id']
+        project_id = row['project_id']
+        compatibility_score = row['compatibility_score']
+        matrix.loc[team_id, project_id] = compatibility_score
 
-        except Exception as e:
-            print(f"Error appending to {filename}.csv: {e}")
-            raise
-        
-if __name__ == '__main__':
-    # Example Usage:
-    num_teams = 2
-    num_students_per_team = 5
-    num_projects = 3
-
-    base_path = "synthetic"
-    # Generate data multiple times and append to files
-    for i in range(3):  # Generate 3 batches of data
-        synthetic_data = generate_synthetic_data(
-            num_teams=num_teams,
-            num_students_per_team=num_students_per_team,
-            num_projects=num_projects,
-        )
-        append_data_to_csv(synthetic_data, base_path)
-        print(f"Batch {i+1} of synthetic data generated and appended to CSV files.")
+    print(matrix)
