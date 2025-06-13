@@ -1,0 +1,13 @@
+services:
+  recommendation:
+    container_name: project_practice_recommendation
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - DB_HOST=${DB_HOST}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - MODEL_DIR=${MODEL_DIR}

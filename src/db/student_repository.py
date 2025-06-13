@@ -11,8 +11,8 @@ class StudentRepository(BaseRepository[Student]):
 
     async def get_student_roles(self, student_id: int) -> List[str]:
         result = await self.session.execute(
-            select(t_student_roles.c.role)
-            .where(t_student_roles.c.student_id == student_id))
+            select(Student.desired_role).where(Student.id == student_id)
+            )
         return [row[0] for row in result.all()]
 
     async def get_students_by_stack(self, stack_terms: List[str]) -> List[Student]:

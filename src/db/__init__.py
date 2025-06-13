@@ -4,12 +4,22 @@ from .project_repository import ProjectRepository
 from .company_repository import CompanyRepository
 from .team_repository import TeamRepository
 from .models import Student, Project, Company, Team
-from typing import Dict, Any
+from .database import db
+from fastapi import Depends
 
-async def get_repositories(session: AsyncSession) -> Dict[str, Any]:
-    return {
-        'students': StudentRepository(session, Student),
-        'projects': ProjectRepository(session, Project),
-        'companies': CompanyRepository(session, Company),
-        'teams': TeamRepository(session, Team),
-    }
+class Repositories:
+    def __init__(self, session: AsyncSession):
+        self.student_repo = StudentRepository(session, Student)
+        self.project_repo = ProjectRepository(session, Project)
+        self.company_repo = CompanyRepository(session, Company)
+        self.team_repo = TeamRepository(session, Team)
+
+async def get_session() -> AsyncSession:
+    """Get database session"""
+
+    async with db.async_session() as session:
+        yield session
+
+async def get_repositories(session: AsyncSession = Depends(get_session)) -> Repositories:
+    """Dependency that provides repository instances."""
+    return Repositories(session=session)

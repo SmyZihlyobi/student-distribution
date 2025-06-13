@@ -1,12 +1,7 @@
-# app/dependencies.py
-from services.recommendation_service import RecommendationService
 from services.recommendation_engine import RecommendationEngine
-import os
+from fastapi import Request
 
-def get_recommendation_service():
-    model_dir = os.getenv('MODEL_DIR', './models')
-    return RecommendationService(model_dir)
+def get_recommendation_engine(request: Request) -> RecommendationEngine:
+    """Обёртка для получения RecommendationEngine из FastAPI"""
+    return request.app.state.recommendation_engine
 
-def get_recommendation_engine():
-    # pyright: ignore
-    return RecommendationEngine(get_recommendation_service())

@@ -1,5 +1,4 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
-from sqlalchemy.orm import sessionmaker
 from config import settings
 
 class Database:
@@ -32,6 +31,11 @@ class Database:
         if not self.async_session or self.async_session is None:
             await self.connect()
         return self.async_session()
+    
+    async def disconnect(self):
+        """Закрывает соединение с базой данных"""
+        if self.engine:
+            await self.engine.dispose()
 
 
 db = Database()
