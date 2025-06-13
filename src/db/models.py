@@ -123,6 +123,7 @@ class Student(Base):
     year: Mapped[Optional[int]] = mapped_column(Integer)
     team_id: Mapped[Optional[int]] = mapped_column(BigInteger)
     desired_role: Mapped[Optional[str]] = mapped_column(String(255))
+    stack: Mapped[Optional[str]] = mapped_column(String(255))
 
     team: Mapped[Optional['Team']] = relationship('Team', back_populates='student')
 

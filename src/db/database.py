@@ -5,7 +5,7 @@ from config import settings
 class Database:
     def __init__(self):
         self.engine = None
-        self.async_session = None
+        self.async_session_maker = None
 
     async def connect(self):
         """Создает движок и сессию для работы с базой данных"""
@@ -29,9 +29,9 @@ class Database:
 
     async def get_session(self) -> AsyncSession:
         """Возвращает сессию для работы с базой данных"""
-        if not self.async_session:
+        if not self.async_session or self.async_session is None:
             await self.connect()
         return self.async_session()
 
-# Создаем глобальный экземпляр базы данных
+
 db = Database()

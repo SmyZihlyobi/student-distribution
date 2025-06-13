@@ -1,11 +1,32 @@
 id,name,description,stack,required_roles,teams_amount,company_id,direction
-1,ML Model Optimization,"Оптимизация существующих моделей машинного обучения для повышения производительности и точности. Требуются навыки Python, TensorFlow, оптимизации моделей.",3,"ML Engineer, Data Scientist",1,1,ML
-2,Cloud Infrastructure Automation,"Автоматизация инфраструктуры в облаке с использованием инструментов IaC. Необходимы знание Terraform, AWS, CI/CD.",2,"DevOps Engineer, Cloud Architect",2,2,Cloud
-3,Data Pipeline Development,"Разработка и оптимизация пайплайнов обработки данных для извлечения, трансформации и загрузки данных. Требуется знание Python, Spark, Airflow.",4,"Data Engineer, Data Scientist",3,3,Data
-4,Web Application Frontend Development,"Разработка клиентской части веб-приложения. Необходимы навыки JavaScript, React, HTML, CSS.",5,"Frontend Developer, UI/UX Designer",1,4,Web
-5,DevOps CI/CD Pipeline Implementation,"Внедрение конвейера непрерывной интеграции и доставки. Требуются знания Jenkins, Docker, Kubernetes, CI/CD.",6,DevOps Engineer,2,5,DevOps
-6,ML Recommendation System,"Разработка системы рекомендаций на основе машинного обучения. Необходимы навыки Python, Pandas, Scikit-learn, ML.",7,"ML Engineer, Data Scientist",1,6,ML
-7,Cloud Security Implementation,"Внедрение мер безопасности в облачной инфраструктуре. Требуются знания AWS Security, Cloud Security, Compliance.",8,"Cloud Security Engineer, Cloud Architect",2,7,Cloud
-8,Data Warehouse Optimization,"Оптимизация хранилища данных для повышения производительности запросов и анализа данных. Требуются навыки SQL, BigQuery, Data Modeling.",9,"Data Engineer, Data Analyst",3,8,Data
-9,Web Application Backend Development,"Разработка серверной части веб-приложения. Необходимы навыки Python, Django/Flask, REST API, Databases.",10,"Backend Developer, Database Administrator",1,9,Web
-10,DevOps Monitoring and Alerting,"Настройка мониторинга и оповещений для облачной инфраструктуры. Требуются знания Prometheus, Grafana, Alertmanager, DevOps.",11,DevOps Engineer,2,10,DevOps
+1,Fraud Detection System,"Разработка системы обнаружения мошенничества с использованием машинного обучения. Требуется опыт работы с Python, TensorFlow и базами данных.","Python, TensorFlow, SQL","Data Scientist, Data Engineer",3,1,ML
+2,Cloud Infrastructure Automation,"Автоматизация инфраструктуры в облаке AWS с использованием Terraform. Требуется знание Linux, Terraform и CI/CD инструментов.","AWS, Terraform, Linux, CI/CD","DevOps Engineer, Cloud Architect",2,2,Cloud
+3,Data Pipeline Optimization,"Оптимизация и улучшение пайплайнов обработки данных. Требуется опыт работы с Apache Spark, Python и системами оркестрации данных.","Python, Spark, Airflow","Data Engineer, DevOps Engineer",1,3,Data
+4,Web Application Performance Improvement,"Улучшение производительности существующего веб-приложения. Требуется опыт работы с JavaScript, React и оптимизацией frontend.","JavaScript, React, Node.js","Frontend Developer, Backend Developer",2,4,Web
+5,CI/CD Pipeline Implementation,"Внедрение и настройка CI/CD пайплайнов для автоматизации сборки, тестирования и развертывания. Требуется опыт работы с Jenkins, Docker и Kubernetes.","Jenkins, Docker, Kubernetes",DevOps Engineer,1,5,DevOps
+6,Recommendation Engine Development,"Разработка системы рекомендаций для платформы электронной коммерции. Требуется опыт работы с Python, рекомендательными системами и базами данных.","Python, scikit-learn, SQL","Data Scientist, Backend Developer",3,6,ML
+7,Database Optimization,"Оптимизация производительности базы данных, миграция и настройка. Требуется опыт работы с PostgreSQL или MySQL.","PostgreSQL, MySQL, SQL","Database Administrator, DevOps Engineer",1,7,Data
+8,Frontend Modernization,Модернизация frontend части существующего веб-приложения с использованием современных технологий. Требуется опыт работы с Angular или Vue.js.,"Angular, HTML, CSS",Frontend Developer,2,8,Web
+9,Infrastructure as Code implementation,Внедрение подхода Infrastructure as Code с использованием Ansible. Требуется опыт работы с Ansible и облачными платформами.,"Ansible, AWS","DevOps Engineer, Cloud Architect",1,9,Cloud
+10,Anomaly Detection System,Разработка системы обнаружения аномалий в данных с использованием машинного обучения и временных рядов. Требуется опыт работы с Python и pandas.,"Python, pandas, time series analysis",Data Scientist,2,10,ML
+
+11,ML Model Optimization,Оптимизация моделей машинного обучения для повышения производительности,"Python, TensorFlow, Kubernetes","ML Engineer, DevOps Engineer, Data Scientist",3,1,ML
+12,Cloud Infrastructure Automation,Автоматизация инфраструктуры в облаке AWS,"AWS, Terraform, Python, Ansible","Cloud Engineer, DevOps Engineer",2,2,Cloud
+13,Data Pipeline Development,Разработка конвейера данных для ETL процессов,"Python, Spark, Hadoop, Kafka","Data Engineer, DevOps Engineer",4,3,Data
+14,CI/CD Pipeline Implementation,Внедрение конвейера непрерывной интеграции и доставки,"Jenkins, Docker, Kubernetes, Git",DevOps Engineer,1,4,DevOps
+15,Web Application Frontend Development,Разработка фронтенда веб-приложения,"JavaScript, React, Redux","Frontend Developer, UI/UX Designer",2,5,Web
+16,ML Model Training and Deployment,Обучение и развертывание моделей машинного обучения в облаке,"Python, Scikit-learn, AWS, Docker","ML Engineer, Cloud Engineer",2,6,ML
+17,Cloud Security Enhancement,Усиление безопасности облачной инфраструктуры,"AWS, Security tools, Python","Cloud Security Engineer, DevOps Engineer",1,7,Cloud
+18,Data Lake Implementation,Внедрение озера данных для аналитики,"Spark, Hadoop, Hive, AWS S3","Data Engineer, Data Scientist",3,8,Data
+19,Serverless Architecture Implementation,Внедрение бессерверной архитектуры,"AWS Lambda, API Gateway, Python","Cloud Engineer, DevOps Engineer",1,9,DevOps
+20,Web Application Backend Development,Разработка бэкенда веб-приложения,"Python, Django, PostgreSQL","Backend Developer, DevOps Engineer",2,10,Web
+21,Predictive Maintenance System,Разработка системы предсказания поломок оборудования. Требуются навыки работы с временными рядами и алгоритмами машинного обучения.,"Python, TensorFlow, Pandas","ML Engineer, Data Scientist, Data Engineer",3,1,ML
+22,Secure Cloud Infrastructure,"Построение безопасной облачной инфраструктуры. Необходимы знания AWS, Azure, или GCP, а также навыки автоматизации и сетевой безопасности.","Terraform, Ansible, AWS","Cloud Engineer, DevOps Engineer, Security Engineer",2,2,Cloud
+23,Data Pipeline for E-commerce,"Создание пайплайна обработки данных для e-commerce платформы. Требуется опыт работы с Kafka, Spark и базами данных.","Kafka, Spark, PostgreSQL","Data Engineer, Data Scientist, DevOps Engineer",2,3,Data
+24,CI/CD Automation,"Автоматизация процесса CI/CD для веб-приложения. Нужен опыт работы с Jenkins, Gitlab CI или Github Actions.","Jenkins, Docker, Kubernetes","DevOps Engineer, Software Engineer",1,4,DevOps
+25,Frontend for Social Network,"Разработка frontend части для социальной сети. Требуются навыки работы с React, JavaScript и API.","React, JavaScript, Node.js","Frontend Developer, UI/UX Designer",4,5,Web
+26,Fraud Detection System,Система обнаружения мошенничества на основе машинного обучения. Необходим опыт в области обработки данных и разработки ML моделей.,"Python, Scikit-learn, Spark","ML Engineer, Data Scientist",2,6,ML
+27,Cloud-Based Data Warehouse,"Развертывание и управление облачным хранилищем данных. Требуются знания Snowflake, BigQuery или Redshift.","Snowflake, Python, Airflow","Data Engineer, Cloud Engineer",1,7,Cloud
+28,Real-time Data Streaming,"Разработка системы потоковой обработки данных в реальном времени. Необходим опыт работы с Kafka, Flink или Spark Streaming.","Kafka, Flink, Python","Data Engineer, Data Scientist",2,8,Data
+29,Infrastructure as Code for Microservices,Развертывание инфраструктуры для микросервисов с использованием IaC. Требуются навыки работы с Terraform и Kubernetes.,"Terraform, Kubernetes, Docker","DevOps Engineer, Cloud Engineer",3,9,DevOps
+30,Backend API for Mobile App,"Разработка backend API для мобильного приложения. Требуются знания Node.js, Python или Java и работы с базами данных.","Node.js, MongoDB, Express.js","Backend Developer, API Developer",2,10,Web

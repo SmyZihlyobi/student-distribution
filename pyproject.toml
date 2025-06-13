@@ -12,5 +12,9 @@ dependencies = [
     "google>=3.0.0",
     "google-generativeai>=0.8.5",
     "pandas>=2.3.0",
+    "scikit-learn>=1.7.0",
+    "sentence-transformers>=4.1.0",
     "sqlalchemy>=2.0.41",
+    "torch>=2.7.1",
+    "uvicorn>=0.34.3",
 ]

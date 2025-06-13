@@ -1,51 +1,202 @@
 id,username,first_name,last_name,desired_role,resume_text,team_id
-1,ivanov_i,Ivan,Ivanov,Python Developer,"Навыки: Python, Django, Flask, SQL",1
-2,petrov_p,Petr,Petrov,ML Engineer,"Навыки: ML, PyTorch, scikit-learn, TensorFlow",1
-3,sidorov_a,Alexey,Sidorov,Data Scientist,"Навыки: Data Science, Python, Pandas, NumPy, Matplotlib",1
-4,vasiliev_v,Vasiliy,Vasiliev,DevOps Engineer,"Навыки: Docker, Kubernetes, CI/CD, AWS",1
+1,ivanov_i,Ivan,Ivanov,Python Developer,"Навыки: Python, Django, Flask, Git",1
+2,petrov_p,Petr,Petrov,ML Engineer,"Навыки: ML, PyTorch, scikit-learn, Python",1
+3,sidorov_a,Andrey,Sidorov,Data Scientist,"Навыки: Python, Pandas, SQL, Математическая статистика",1
+4,volkov_d,Dmitriy,Volkov,DevOps Engineer,"Навыки: Docker, Kubernetes, AWS, Linux, Git",1
 5,grishina_o,Olga,Grishina,Frontend Developer,"Навыки: JavaScript, React, HTML, CSS",1
-6,pavlov_d,Dmitry,Pavlov,Backend Developer,"Навыки: Java, Spring, REST, SQL",1
-7,sergeev_s,Sergey,Sergeev,Python Developer,"Навыки: Python, Django, REST API, PostgreSQL",2
-8,kuznetsova_e,Elena,Kuznetsova,ML Engineer,"Навыки: ML, TensorFlow, Keras, Computer Vision",2
-9,smirnov_m,Mikhail,Smirnov,Data Scientist,"Навыки: Python, Spark, Data Mining, Tableau",2
-10,volkov_a,Anton,Volkov,DevOps Engineer,"Навыки: Linux, Ansible, Jenkins, GCP",2
-11,konovalova_k,Ksenia,Konovalova,Frontend Developer,"Навыки: JavaScript, Angular, HTML, CSS",2
-12,zaitsev_i,Ivan,Zaitsev,Backend Developer,"Навыки: Node.js, Express.js, MongoDB, REST",2
-13,morozov_n,Nikolay,Morozov,Python Developer,"Навыки: Python, Flask, SQLAlchemy, Git",3
-14,fedotova_m,Maria,Fedotova,ML Engineer,"Навыки: ML, scikit-learn, NLP, Regression",3
-15,lebedev_v,Viktor,Lebedev,Data Scientist,"Навыки: Python, Data Analysis, Data Visualization, Power BI",3
-16,novikova_s,Sofia,Novikova,DevOps Engineer,"Навыки: Terraform, AWS, Azure, Monitoring",3
-17,belov_p,Pavel,Belov,Frontend Developer,"Навыки: JavaScript, Vue.js, HTML, CSS",3
-18,shcherbakov_e,Evgeny,Shcherbakov,Backend Developer,"Навыки: PHP, Laravel, MySQL, REST",3
-19,ignatieva_a,Anna,Ignatieva,Python Developer,"Навыки: Python, FastAPI, PostgreSQL, Docker",4
-20,kolosov_d,Dmitry,Kolosov,ML Engineer,"Навыки: ML, PyTorch, Reinforcement Learning, OpenCV",4
-21,soloviev_i,Ivan,Soloviev,Data Scientist,"Навыки: R, Statistics, Time Series Analysis, Machine Learning",4
-22,fedorova_n,Natalia,Fedorova,DevOps Engineer,"Навыки: Docker, Kubernetes, CI/CD, Jenkins",4
-23,makarov_a,Alexey,Makarov,Frontend Developer,"Навыки: JavaScript, React, Redux, HTML, CSS",4
-24,kolesnikov_v,Victor,Kolesnikov,Backend Developer,"Навыки: Ruby on Rails, REST API, PostgreSQL",4
-25,nikolaev_s,Sergey,Nikolaev,Python Developer,"Навыки: Python, Django REST Framework, Git",5
-26,guseva_o,Olga,Guseva,ML Engineer,"Навыки: ML, TensorFlow, Keras, Image Processing",5
-27,popov_a,Anton,Popov,Data Scientist,"Навыки: Python, Data Analysis, Data Visualization, Pandas",5
-28,vinogradova_e,Elena,Vinogradova,DevOps Engineer,"Навыки: AWS, CloudFormation, Monitoring, Jenkins",5
-29,tsvetkov_i,Ivan,Tsvetkov,Frontend Developer,"Навыки: JavaScript, Angular, TypeScript, HTML, CSS",5
-30,demidova_n,Natalia,Demidova,Backend Developer,"Навыки: Python, Django, REST, SQL",5
-31,eremeev_a,Alexander,Eremeev,Python Developer,"Навыки: Python, Flask, SQL, Docker",6
-32,kalinina_m,Maria,Kalinina,ML Engineer,"Навыки: ML, scikit-learn, Decision Trees, Random Forests",6
-33,karpov_i,Igor,Karpov,Data Scientist,"Навыки: Python, NLP, NLTK, Spacy",6
-34,bogdanov_d,Dmitry,Bogdanov,DevOps Engineer,"Навыки: Kubernetes, Helm, CI/CD, GitLab",6
-35,andreeva_a,Anna,Andreeva,Frontend Developer,"Навыки: JavaScript, Vue.js, HTML, SCSS",6
-36,timofeev_s,Sergey,Timofeev,Backend Developer,"Навыки: Java, Spring Boot, REST, JPA",6
-37,ryabova_e,Elena,Ryabova,Python Developer,"Навыки: Python, Django, Celery, Redis",7
-38,frolov_p,Pavel,Frolov,ML Engineer,"Навыки: ML, PyTorch, CNN, RNN",7
-39,antonov_m,Mikhail,Antonov,Data Scientist,"Навыки: Python, Big Data, Hadoop, Hive",7
-40,shishkina_v,Vera,Shishkina,DevOps Engineer,"Навыки: Ansible, Terraform, AWS, Monitoring",7
-41,volkova_k,Ksenia,Volkova,Frontend Developer,"Навыки: JavaScript, React, Material UI, HTML, CSS",7
-42,gromov_d,Dmitry,Gromov,Backend Developer,"Навыки: Node.js, Express.js, PostgreSQL, REST",7
-43,lazarev_s,Sergey,Lazarev,Python Developer,"Навыки: Python, FastAPI, PostgreSQL, Docker",8
-44,vasiliev_d,Dmitry,Vasiliev,ML Engineer,"Навыки: ML, Keras, Image Segmentation, OpenCV",8
-45,krylova_m,Maria,Krylova,Data Scientist,"Навыки: Python, Data Analysis, Spark, Hive",8
-46,belova_o,Olga,Belova,DevOps Engineer,"Навыки: Docker, Kubernetes, CI/CD, AWS",8
-47,ivanov_m,Mikhail,Ivanov,Frontend Developer,"Навыки: JavaScript, Vue.js, HTML, SCSS",8
-48,petrova_e,Elena,Petrova,Backend Developer,"Навыки: PHP, Laravel, MySQL, REST",8
-49,sokolov_i,Ivan,Sokolov,Python Developer,"Навыки: Python, Django, REST, Git",9
-50,kulikova_o,Olga,Kulikova,ML Engineer,"Навыки: ML, scikit-learn, Regression, Classification",9
+6,zaitsev_v,Vasiliy,Zaitsev,Backend Developer,"Навыки: Python, Flask, PostgreSQL, REST API, Git",1
+7,pavlov_s,Sergey,Pavlov,Python Developer,"Навыки: Python, Django, Git, REST API",2
+8,kuznetsova_e,Elena,Kuznetsova,ML Engineer,"Навыки: ML, TensorFlow, Python, Pandas",2
+9,morozov_m,Mikhail,Morozov,Data Scientist,"Навыки: Python, NumPy, SQL, Визуализация данных",2
+10,belova_k,Ksenia,Belova,DevOps Engineer,"Навыки: AWS, Terraform, CI/CD, Linux, Docker",2
+11,novikov_r,Roman,Novikov,Frontend Developer,"Навыки: JavaScript, Angular, HTML, CSS",2
+12,fedorov_f,Fedor,Fedorov,Backend Developer,"Навыки: Java, Spring, REST API, Git",2
+13,lebedev_i,Ivan,Lebedev,Python Developer,"Навыки: Python, FastAPI, Git, PostgreSQL",3
+14,gavrilov_g,Gleb,Gavrilov,ML Engineer,"Навыки: ML, scikit-learn, Python, NLP",3
+15,ermakov_e,Evgeniy,Ermakov,Data Scientist,"Навыки: Python, Spark, SQL, Data Mining",3
+16,popova_v,Vera,Popova,DevOps Engineer,"Навыки: Kubernetes, Docker, CI/CD, Ansible, Linux",3
+17,soloviev_p,Pavel,Soloviev,Frontend Developer,"Навыки: JavaScript, Vue.js, HTML, CSS",3
+18,maslova_a,Anna,Maslova,Backend Developer,"Навыки: Node.js, Express.js, MongoDB, REST API",3
+19,nikolaev_d,Dmitriy,Nikolaev,Python Developer,"Навыки: Python, Django, REST API, Git",4
+20,vinogradov_v,Viktor,Vinogradov,ML Engineer,"Навыки: ML, PyTorch, Python, Computer Vision",4
+21,timofeev_t,Timofey,Timofeev,Data Scientist,"Навыки: Python, Pandas, SQL, A/B Testing",4
+22,semenova_n,Natalia,Semenova,DevOps Engineer,"Навыки: AWS, Jenkins, Linux, Docker, Git",4
+23,alexandrov_s,Sergey,Alexandrov,Frontend Developer,"Навыки: JavaScript, React, Redux, CSS",4
+24,korolev_k,Kirill,Korolev,Backend Developer,"Навыки: Python, Flask, PostgreSQL, REST API, Docker",4
+25,zueva_m,Maria,Zueva,Python Developer,"Навыки: Python, Django, Git, Docker",5
+26,makarov_m,Maxim,Makarov,ML Engineer,"Навыки: ML, TensorFlow, Python, Deep Learning",5
+27,shcherbakova_o,Olga,Shcherbakova,Data Scientist,"Навыки: Python, Tableau, SQL, Статистический анализ",5
+28,egorov_i,Igor,Egorov,DevOps Engineer,"Навыки: Azure, Terraform, CI/CD, Linux",5
+29,krasnova_v,Varvara,Krasnova,Frontend Developer,"Навыки: JavaScript, Vue.js, HTML, SCSS",5
+30,kiselev_a,Anton,Kiselev,Backend Developer,"Навыки: Java, Spring Boot, REST API, MySQL",5
+31,volodin_a,Alexey,Volodin,Python Developer,"Навыки: Python, Django, Git, PostgreSQL",6
+32,soboleva_e,Elena,Soboleva,ML Engineer,"Навыки: ML, scikit-learn, Python, NLP",6
+33,ivanova_a,Anna,Ivanova,Data Scientist,"Навыки: Python, Spark, SQL, Визуализация",6
+34,frolov_s,Sergey,Frolov,DevOps Engineer,"Навыки: Kubernetes, Helm, CI/CD, Linux, Docker",6
+35,kovaleva_y,Yulia,Kovaleva,Frontend Developer,"Навыки: JavaScript, Angular, HTML, CSS",6
+36,grigoriev_r,Roman,Grigoriev,Backend Developer,"Навыки: Node.js, Express.js, MongoDB, REST API, Git",6
+37,kuzmin_i,Ivan,Kuzmin,Python Developer,"Навыки: Python, Flask, REST API, Git, Docker",7
+38,andreev_p,Pavel,Andreev,ML Engineer,"Навыки: ML, PyTorch, Python, Computer Vision, Git",7
+39,fedorova_s,Svetlana,Fedorova,Data Scientist,"Навыки: Python, Pandas, SQL, A/B Testing, Git",7
+40,savelyev_d,Dmitriy,Savelyev,DevOps Engineer,"Навыки: AWS, Terraform, Linux, Docker, Git",7
+41,vasiliev_k,Kirill,Vasiliev,Frontend Developer,"Навыки: JavaScript, React, Redux, CSS, Git",7
+42,chernyshov_a,Alexandr,Chernyshov,Backend Developer,"Навыки: Python, Django, PostgreSQL, REST API, Git",7
+43,kalinina_m,Maria,Kalinina,Python Developer,"Навыки: Python, FastAPI, Git, Docker",8
+44,stepanov_v,Viktor,Stepanov,ML Engineer,"Навыки: ML, TensorFlow, Python, Deep Learning, Git",8
+45,maksimov_m,Mikhail,Maksimov,Data Scientist,"Навыки: Python, Tableau, SQL, Статистический анализ, Git",8
+46,shilova_a,Anna,Shilova,DevOps Engineer,"Навыки: Azure, Ansible, CI/CD, Linux, Git",8
+47,pavlova_e,Elena,Pavlova,Frontend Developer,"Навыки: JavaScript, Vue.js, HTML, SCSS, Git",8
+48,kozlov_a,Andrey,Kozlov,Backend Developer,"Навыки: Java, Spring Boot, REST API, MySQL, Git",8
+49,belova_a,Anna,Belova,Python Developer,"Навыки: Python, Django, PostgreSQL, REST API, Git",9
+50,petrova_e,Elena,Petrova,ML Engineer,"Навыки: ML, scikit-learn, Python, NLP, Git",10
+
+51,ivanov_i,Ivan,Ivanov,Python Developer,"Навыки: Python, Django, Flask, PostgreSQL",1
+52,petrov_p,Petr,Petrov,ML Engineer,"Навыки: Машинное обучение, PyTorch, scikit-learn, TensorFlow",1
+53,sidorov_s,Sergey,Sidorov,Data Scientist,"Навыки: Python, Pandas, NumPy, анализ данных",1
+54,kozlov_a,Alexey,Kozlov,DevOps Engineer,"Навыки: Docker, Kubernetes, CI/CD, AWS",1
+55,volkov_v,Vladimir,Volkov,Frontend Developer,"Навыки: JavaScript, React, HTML, CSS",1
+56,morozov_m,Mikhail,Morozov,Backend Developer,"Навыки: Java, Spring, REST API, SQL",1
+57,egorov_e,Egor,Egorov,Python Developer,"Навыки: Python, Flask, FastAPI, SQL",2
+58,pavlov_p,Pavel,Pavlov,ML Engineer,"Навыки: Python, Keras, TensorFlow, анализ данных",2
+59,vasiliev_v,Vasiliy,Vasiliev,Data Scientist,"Навыки: Python, Spark, Hadoop, статистика",2
+60,grigoriev_g,Grigoriy,Grigoriev,DevOps Engineer,"Навыки: Terraform, Ansible, Azure, Linux",2
+61,zaitsev_z,Zakhar,Zaitsev,Frontend Developer,"Навыки: JavaScript, Angular, TypeScript, CSS",2
+62,fedotov_f,Fedor,Fedotov,Backend Developer,"Навыки: Python, Django, REST API, PostgreSQL",2
+63,novikov_n,Nikolay,Novikov,Python Developer,"Навыки: Python, Django, REST API, Celery",3
+64,andreev_a,Andrey,Andreev,ML Engineer,"Навыки: Python, OpenCV, Computer Vision, CNN",3
+65,stepanov_s,Stepan,Stepanov,Data Scientist,"Навыки: Python, Tableau, Power BI, визуализация данных",3
+66,fedorov_f,Fedor,Fedorov,DevOps Engineer,"Навыки: Docker, Kubernetes, Jenkins, AWS",3
+67,kuznetsov_k,Konstantin,Kuznetsov,Frontend Developer,"Навыки: JavaScript, Vue.js, HTML, CSS",3
+68,ermakov_e,Ermak,Ermakov,Backend Developer,"Навыки: Java, Spring Boot, REST API, MySQL",3
+69,smirnov_s,Sergey,Smirnov,Python Developer,"Навыки: Python, FastAPI, PostgreSQL, SQLAlchemy",4
+70,karpov_k,Kirill,Karpov,ML Engineer,"Навыки: Python, scikit-learn, Feature Engineering, NLP",4
+71,ivanova_i,Irina,Ivanova,Data Scientist,"Навыки: Python, Pandas, Matplotlib, Seaborn",4
+72,popov_p,Pavel,Popov,DevOps Engineer,"Навыки: AWS, CI/CD, Terraform, Linux",4
+73,makarov_m,Makar,Makarov,Frontend Developer,"Навыки: HTML, CSS, JavaScript, React",4
+74,vinogradov_v,Victor,Vinogradov,Backend Developer,"Навыки: Python, Django, DRF, PostgreSQL",4
+75,soloviev_s,Sergey,Soloviev,Python Developer,"Навыки: Python, Flask, SQL, REST API",5
+76,vorobyov_v,Victor,Vorobyov,ML Engineer,"Навыки: Python, PyTorch, Computer Vision, GAN",5
+77,semenov_s,Semen,Semenov,Data Scientist,"Навыки: R, статистика, анализ данных, Data Mining",5
+78,petrova_p,Polina,Petrova,DevOps Engineer,"Навыки: Docker, Kubernetes, GCP, CI/CD",5
+79,antonov_a,Anton,Antonov,Frontend Developer,"Навыки: JavaScript, Angular, TypeScript, CSS",5
+80,ryabov_r,Roman,Ryabov,Backend Developer,"Навыки: Java, Spring, REST API, MongoDB",5
+81,belov_b,Boris,Belov,Python Developer,"Навыки: Python, Django, Celery, PostgreSQL",6
+82,gusev_g,Gleb,Gusev,ML Engineer,"Навыки: Python, TensorFlow, CNN, NLP",6
+83,titov_t,Timur,Titov,Data Scientist,"Навыки: Python, Tableau, анализ данных, A/B тестирование",6
+84,fedoseev_f,Fedor,Fedoseev,DevOps Engineer,"Навыки: Ansible, Kubernetes, AWS, Linux",6
+85,belyaev_b,Boris,Belyaev,Frontend Developer,"Навыки: React, JavaScript, HTML, CSS",6
+86,frolov_f,Fedor,Frolov,Backend Developer,"Навыки: Python, Flask, REST API, MySQL",6
+87,shevchenko_s,Sergey,Shevchenko,Python Developer,"Навыки: Python, Django, API, Docker",7
+88,lyubimov_l,Lev,Lyubimov,ML Engineer,"Навыки: Машинное обучение, PyTorch, классификация, Python",7
+89,kolesnikov_k,Kirill,Kolesnikov,Data Scientist,"Навыки: Python, Pandas, NumPy, визуализация",7
+90,romanov_r,Roman,Romanov,DevOps Engineer,"Навыки: Docker, Kubernetes, CI/CD, Jenkins",7
+91,sobolev_s,Sergey,Sobolev,Frontend Developer,"Навыки: JavaScript, Vue.js, CSS, HTML",7
+92,kolosov_k,Konstantin,Kolosov,Backend Developer,"Навыки: Java, Spring Boot, REST API, SQL",7
+93,zaharov_z,Zakhar,Zaharov,Python Developer,"Навыки: Python, Flask, SQL, PostgreSQ",8
+94,efimov_e,Egor,Efimov,ML Engineer,"Навыки: Машинное обучение, TensorFlow, Keras, Python",8
+95,fomina_f,Faina,Fomina,Data Scientist,"Навыки: Python, Spark, Big Data, статистический анализ",8
+96,sokolov_s,Sergey,Sokolov,DevOps Engineer,"Навыки: AWS, Terraform, Linux, Docker",8
+97,krasnov_k,Kirill,Krasnov,Frontend Developer,"Навыки: JavaScript, React, Redux, HTML",8
+98,alexandrov_a,Alexandr,Alexandrov,Backend Developer,"Навыки: Python, Django, REST API, PostgreSQL",8
+99,ignatiev_i,Igor,Ignatiev,Python Developer,"Навыки: Python, Django, API, Docker",9
+100,pavlova_p,Polina,Pavlova,ML Engineer,"Навыки: Машинное обучение, scikit-learn, Python, анализ данных",9
+101,ivanov_i,Ivan,Ivanov,Python Developer,"Навыки: Python, Django, Flask, REST API",1
+102,petrov_p,Petr,Petrov,ML Engineer,"Навыки: ML, PyTorch, scikit-learn, TensorFlow, Pandas",1
+103,sidorov_a,Andrey,Sidorov,Data Scientist,"Навыки: Python, Pandas, NumPy, Scikit-learn, Data Visualization",1
+104,vasiliev_d,Dmitry,Vasiliev,DevOps Engineer,"Навыки: Docker, Kubernetes, CI/CD, AWS, Linux",1
+105,grishina_e,Elena,Grishina,Frontend Developer,"Навыки: JavaScript, React, HTML, CSS, Git",1
+106,kuznetsov_k,Kirill,Kuznetsov,Backend Developer,"Навыки: Python, Django, SQL, PostgreSQL, REST API",1
+107,belova_m,Maria,Belova,Python Developer,"Навыки: Python, Flask, REST API, Celery",2
+108,sergeev_s,Sergey,Sergeev,ML Engineer,"Навыки: ML, TensorFlow, Keras, Computer Vision",2
+109,volkov_v,Viktor,Volkov,Data Scientist,"Навыки: Python, Data Analysis, Spark, Hadoop",2
+110,pavlov_p,Pavel,Pavlov,DevOps Engineer,"Навыки: Jenkins, Ansible, AWS, Terraform",2
+111,zaitseva_a,Anna,Zaitseva,Frontend Developer,"Навыки: JavaScript, Angular, HTML, CSS, Bootstrap",2
+112,novikov_o,Oleg,Novikov,Backend Developer,"Навыки: Python, FastAPI, PostgreSQL, REST API, Docker",2
+113,morozov_i,Igor,Morozov,Python Developer,"Навыки: Python, Django, PostgreSQL, Unit Testing",3
+114,fedotov_f,Fedor,Fedotov,ML Engineer,"Навыки: ML, scikit-learn, NLP, Machine Learning Pipelines",3
+115,ermolaeva_e,Elena,Ermolaeva,Data Scientist,"Навыки: Python, Data Visualization, Tableau, Power BI",3
+116,konovalov_k,Kirill,Konovalov,DevOps Engineer,"Навыки: Docker, Kubernetes, Google Cloud Platform (GCP), CI/CD",3
+117,ryabova_n,Natalia,Ryabova,Frontend Developer,"Навыки: JavaScript, Vue.js, HTML, CSS, Webpack",3
+118,smirnov_s,Sergey,Smirnov,Backend Developer,"Навыки: Node.js, Express.js, MongoDB, REST API",3
+119,kravtsova_m,Maria,Kravtsova,Python Developer,"Навыки: Python, Django, DRF, Docker, REST API",4
+120,frolov_f,Fedor,Frolov,ML Engineer,"Навыки: ML, PyTorch, Reinforcement Learning",4
+121,gusev_g,Gleb,Gusev,Data Scientist,"Навыки: Python, Statistics, Data Mining",4
+122,shishkin_s,Sergey,Shishkin,DevOps Engineer,"Навыки: AWS, Terraform, CI/CD, Monitoring",4
+123,popova_p,Polina,Popova,Frontend Developer,"Навыки: React, TypeScript, Redux, CSS Modules",4
+124,titov_t,Timur,Titov,Backend Developer,"Навыки: Java, Spring Boot, REST API, SQL",4
+125,lysova_l,Lidia,Lysova,Python Developer,"Навыки: Python, Flask, SQLAlchemy, REST API",5
+126,borisova_b,Boris,Borisov,ML Engineer,"Навыки: ML, TensorFlow, Deep Learning",5
+127,karpov_k,Kirill,Karpov,Data Scientist,"Навыки: Python, Exploratory Data Analysis, A/B testing",5
+128,volkova_v,Vera,Volkova,DevOps Engineer,"Навыки: Kubernetes, Helm, Prometheus, Grafana",5
+129,antonov_a,Anton,Antonov,Frontend Developer,"Навыки: JavaScript, HTML, CSS, SASS, Responsive Design",5
+130,maslov_m,Maxim,Maslov,Backend Developer,"Навыки: Python, Django, REST API, Celery, RabbitMQ",5
+131,kolosov_k,Konstantin,Kolosov,Python Developer,"Навыки: Python, Django, Celery, REST API",6
+132,ignatiev_i,Igor,Ignatiev,ML Engineer,"Навыки: ML, scikit-learn, Time Series Analysis",6
+133,efremov_e,Evgeny,Efremov,Data Scientist,"Навыки: Python, Machine Learning, Feature Engineering, Statistics",6
+134,filatova_f,Faina,Filatova,DevOps Engineer,"Навыки: Docker, AWS, CI/CD pipelines, Monitoring",6
+135,soloveva_s,Sofia,Soloveva,Frontend Developer,"Навыки: JavaScript, React, Styled Components, Testing",6
+136,demidov_d,Dmitry,Demidov,Backend Developer,"Навыки: Python, FastAPI, PostgreSQL, Docker, REST API",6
+137,korneeva_k,Kristina,Korneeva,Python Developer,"Навыки: Python, Flask, REST API, Unit Tests",7
+138,lebedeva_l,Liza,Lebedeva,ML Engineer,"Навыки: ML, Computer Vision, OpenCV",7
+139,makarov_m,Maxim,Makarov,Data Scientist,"Навыки: Python, Natural Language Processing (NLP), Transformers",7
+140,panova_p,Polina,Panova,DevOps Engineer,"Навыки: Ansible, Jenkins, AWS, Monitoring",7
+141,zharova_z,Zoya,Zharova,Frontend Developer,"Навыки: JavaScript, Vue.js, Pinia, Testing",7
+142,melnikova_m,Maria,Melnikova,Backend Developer,"Навыки: Node.js, Express.js, MongoDB, REST API",7
+143,guseva_g,Galina,Guseva,Python Developer,"Навыки: Python, Django, PostgreSQL, Unit Testing",8
+144,savelyeva_s,Svetlana,Savelyeva,ML Engineer,"Навыки: ML, TensorFlow, Keras",8
+145,kudryavtseva_k,Ksenia,Kudryavtseva,Data Scientist,"Навыки: Python, Data Visualization, Seaborn",8
+146,vinogradov_v,Viktor,Vinogradov,DevOps Engineer,"Навыки: Docker, Kubernetes, GCP, CI/CD",8
+147,frolova_f,Faina,Frolova,Frontend Developer,"Навыки: HTML, CSS, JavaScript, TypeScript, Git",8
+148,pavlova_p,Polina,Pavlova,Backend Developer,"Навыки: Java, Spring, REST API",8
+149,shcherbakov_s,Sergey,Shcherbakov,Python Developer,"Навыки: Python, Django, REST API, Docker",9
+150,andreeva_a,Anna,Andreeva,ML Engineer,"Навыки: ML, PyTorch, Data Augmentation",9
+151,ivanov_i,Ivan,Ivanov,Python Developer,"Навыки: Python, Django, Flask",1
+152,petrov_p,Petr,Petrov,ML Engineer,"Навыки: ML, PyTorch, scikit-learn",1
+153,sidorov_a,Alexey,Sidorov,Data Scientist,"Навыки: Python, Pandas, NumPy",1
+154,smirnov_d,Dmitry,Smirnov,DevOps Engineer,"Навыки: Docker, Kubernetes, CI/CD",1
+155,volkov_v,Vladimir,Volkov,Frontend Developer,"Навыки: JavaScript, React, HTML, CSS",1
+156,kozlov_k,Kirill,Kozlov,Backend Developer,"Навыки: Python, Django, REST API",1
+157,andreev_a,Andrey,Andreev,Python Developer,"Навыки: Python, Flask, PostgreSQL",2
+158,sergeev_s,Sergey,Sergeev,ML Engineer,"Навыки: ML, TensorFlow, Keras",2
+159,grigoriev_g,Grigory,Grigoriev,Data Scientist,"Навыки: Python, SQL, Data Visualization",2
+160,ivanova_e,Elena,Ivanova,DevOps Engineer,"Навыки: AWS, Terraform, Ansible",2
+161,pavlova_o,Olga,Pavlova,Frontend Developer,"Навыки: JavaScript, Angular, HTML, CSS",2
+162,vasiliev_v,Vasily,Vasiliev,Backend Developer,"Навыки: Java, Spring, REST API",2
+163,zaitsev_z,Zahar,Zaitsev,Python Developer,"Навыки: Python, Django, Celery",3
+164,nikolaev_n,Nikolay,Nikolaev,ML Engineer,"Навыки: ML, scikit-learn, Feature Engineering",3
+165,fedorov_f,Fedor,Fedorov,Data Scientist,"Навыки: Python, Spark, Data Mining",3
+166,belov_b,Boris,Belov,DevOps Engineer,"Навыки: Jenkins, CI/CD, Monitoring",3
+167,kuznetsova_k,Ksenia,Kuznetsova,Frontend Developer,"Навыки: JavaScript, Vue.js, HTML, CSS",3
+168,makarov_m,Maxim,Makarov,Backend Developer,"Навыки: Node.js, Express.js, REST API",3
+169,morozov_m,Mikhail,Morozov,Python Developer,"Навыки: Python, Fastapi, PostgreSQL",4
+170,gusev_g,Gleb,Gusev,ML Engineer,"Навыки: ML, NLP, Transformers",4
+171,titov_t,Timur,Titov,Data Scientist,"Навыки: R, Data Analysis, Statistics",4
+172,konovalov_k,Konstantin,Konovalov,DevOps Engineer,"Навыки: GCP, Docker, Kubernetes",4
+173,soboleva_s,Svetlana,Soboleva,Frontend Developer,"Навыки: TypeScript, React, HTML, CSS",4
+174,melnikova_m,Marina,Melnikova,Backend Developer,"Навыки: Python, Flask, REST API",4
+175,popov_p,Pavel,Popov,Python Developer,"Навыки: Python, Django REST Framework, Docker",5
+176,efremov_e,Evgeny,Efremov,ML Engineer,"Навыки: ML, Computer Vision, OpenCV",5
+177,dmitriev_d,Dmitry,Dmitriev,Data Scientist,"Навыки: Python, Tableau, Data Visualization",5
+178,kulikov_k,Kirill,Kulikov,DevOps Engineer,"Навыки: Linux, Bash, Scripting",5
+179,ermolaeva_e,Elena,Ermolaeva,Frontend Developer,"Навыки: JavaScript, jQuery, HTML, CSS",5
+180,romanov_r,Roman,Romanov,Backend Developer,"Навыки: Ruby, Ruby on Rails, REST API",5
+181,shishkin_s,Sergey,Shishkin,Python Developer,"Навыки: Python, asyncio, PostgreSQL",6
+182,karpov_k,Konstantin,Karpov,ML Engineer,"Навыки: ML, Deep Learning, CNN",6
+183,antonov_a,Anton,Antonov,Data Scientist,"Навыки: Python, Time Series Analysis, Forecasting",6
+184,ryabov_r,Roman,Ryabov,DevOps Engineer,"Навыки: Azure, Docker, Kubernetes",6
+185,vorobyova_v,Veronika,Vorobyova,Frontend Developer,"Навыки: JavaScript, Bootstrap, HTML, CSS",6
+186,shcherbakov_s,Sergey,Shcherbakov,Backend Developer,"Навыки: PHP, Laravel, REST API",6
+187,ivanov_d,Denis,Ivanov,Python Developer,"Навыки: Python, FastAPI, Docker Compose",7
+188,petrova_p,Polina,Petrova,ML Engineer,"Навыки: ML, Reinforcement Learning, Gym",7
+189,sidorova_s,Svetlana,Sidorova,Data Scientist,"Навыки: Python, Regression, Classification",7
+190,smirnova_m,Maria,Smirnova,DevOps Engineer,"Навыки: Docker, Kubernetes, Helm",7
+191,andreeva_a,Anna,Andreeva,Frontend Developer,"Навыки: JavaScript, Svelte, HTML, CSS",7
+192,vasilev_v,Viktor,Vasilev,Backend Developer,"Навыки: Go, Gin, REST API",7
+193,zaitseva_z,Zoya,Zaitseva,Python Developer,"Навыки: Python, Flask, Unit Testing",8
+194,nikolaeva_n,Natalia,Nikolaeva,ML Engineer,"Навыки: ML, PyTorch, GANs",8
+195,fedotova_f,Faina,Fedotova,Data Scientist,"Навыки: Python, A/B Testing, Statistics",8
+196,belova_b,Boryana,Belova,DevOps Engineer,"Навыки: AWS, Serverless, CI/CD",8
+197,kuznetsov_k,Kirill,Kuznetsov,Frontend Developer,"Навыки: JavaScript, Webpack, HTML, CSS",8
+198,makarova_m,Maria,Makarova,Backend Developer,"Навыки: C#, .NET, REST API",8
+199,morozova_m,Margarita,Morozova,Python Developer,"Навыки: Python, Django, GraphQL",9
+200,gusev_g,Georgiy,Gusev,ML Engineer,"Навыки: ML, NLP, Spacy",9
