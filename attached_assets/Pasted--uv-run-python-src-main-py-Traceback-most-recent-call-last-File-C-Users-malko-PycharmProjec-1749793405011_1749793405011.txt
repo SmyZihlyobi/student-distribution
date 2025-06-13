@@ -1,0 +1,33 @@
+$ uv run python src\\main.py
+Traceback (most recent call last):
+  File "C:\Users\malko\PycharmProjects\student_vectorizer\distribution\src\main.py", line 2, in <module>
+    from api.endpoints import recommendations
+  File "C:\Users\malko\PycharmProjects\student_vectorizer\distribution\src\api\endpoints\recommendations.py", line 19, in <module>
+    @router.get("/student/{student_id}", response_model=List[RecommendationResponse])
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malko\PycharmProjects\student_vectorizer\distribution\.venv\Lib\site-packages\fastapi\routing.py", line 994, in decorator
+    self.add_api_route(
+  File "C:\Users\malko\PycharmProjects\student_vectorizer\distribution\.venv\Lib\site-packages\fastapi\routing.py", line 933, in add_api_route
+    route = route_class(
+            ^^^^^^^^^^^^
+  File "C:\Users\malko\PycharmProjects\student_vectorizer\distribution\.venv\Lib\site-packages\fastapi\routing.py", line 554, in __init__
+    self.dependant = get_dependant(path=self.path_format, call=self.endpoint)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malko\PycharmProjects\student_vectorizer\distribution\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 292, in get_dependant
+    sub_dependant = get_param_sub_dependant(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malko\PycharmProjects\student_vectorizer\distribution\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 126, in get_param_sub_dependant
+    return get_sub_dependant(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malko\PycharmProjects\student_vectorizer\distribution\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 162, in get_sub_dependant
+    sub_dependant = get_dependant(
+                    ^^^^^^^^^^^^^^
+  File "C:\Users\malko\PycharmProjects\student_vectorizer\distribution\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 285, in get_dependant
+    param_details = analyze_param(
+                    ^^^^^^^^^^^^^^
+  File "C:\Users\malko\PycharmProjects\student_vectorizer\distribution\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 488, in analyze_param
+    field = create_model_field(
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malko\PycharmProjects\student_vectorizer\distribution\.venv\Lib\site-packages\fastapi\utils.py", line 98, in create_model_field
+    raise fastapi.exceptions.FastAPIError(
+fastapi.exceptions.FastAPIError: Invalid args for response field! Hint: check that <class 'sqlalchemy.ext.asyncio.session.AsyncSession'> is a valid Pydantic field type. If you are using a return type annotation that is not a valid Pydantic field (e.g. Union[Response, dict, None]) you can disable generating the response model from the type annotation with the path operation decorator parameter response_model=None. Read more: https://fastapi.tiangolo.com/tutorial/response-model/
