@@ -1,14 +1,12 @@
 from fastapi import FastAPI
-from torch import mode
 from api.endpoints import recommendations
 from db.database import db
 from contextlib import asynccontextmanager
-from db.project_repository import ProjectRepository
-from db.models import Project
 from services.recommendation_service import RecommendationService
 from services.recommendation_engine import RecommendationEngine
 from config import settings
 from pathlib import Path
+from fastapi.middleware.cors import CORSMiddleware
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -30,6 +28,14 @@ async def lifespan(app: FastAPI):
     print("Database disconnected.")
 
 app = FastAPI(lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(recommendations.router)
 
