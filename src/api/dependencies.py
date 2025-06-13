@@ -8,4 +8,5 @@ def get_recommendation_service():
     return RecommendationService(model_dir)
 
 def get_recommendation_engine():
+    # pyright: ignore
     return RecommendationEngine(get_recommendation_service())

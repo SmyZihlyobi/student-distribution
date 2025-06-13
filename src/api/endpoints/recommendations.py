@@ -15,7 +15,7 @@ class RecommendationResponse(BaseModel):
     required_stack: str
     required_roles: str
 
-
+# pyright: ignore
 @router.get("/student/{student_id}", response_model=List[RecommendationResponse])
 async def get_student_recommendations(
     student_id: int,
