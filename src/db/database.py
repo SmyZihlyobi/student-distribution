@@ -32,6 +32,11 @@ class Database:
         if not self.async_session or self.async_session is None:
             await self.connect()
         return self.async_session()
+    
+    async def disconnect(self):
+        """Закрывает соединение с базой данных"""
+        if self.engine:
+            await self.engine.dispose()
 
 
 db = Database()

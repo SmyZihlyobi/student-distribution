@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from typing import List
 from pydantic import BaseModel
 from services.recommendation_engine import RecommendationEngine
-from db import get_repositories
+from db import get_repositories, Repositories
 from api.dependencies import get_recommendation_engine
 
 router = APIRouter(prefix="/recommendations", tags=["recommendations"])
@@ -18,15 +18,13 @@ class RecommendationResponse(BaseModel):
 async def get_student_recommendations(
     student_id: int,
     top_n: int = 5,
-    repos: dict = Depends(get_repositories),
+    repos: Repositories = Depends(get_repositories),
     engine: RecommendationEngine = Depends(get_recommendation_engine)
 ):
     try:
-        # Получаем репозитории
-        student_repo = repos['student_repo']
-        project_repo = repos['project_repo']
+        student_repo = repos.student_repo
+        project_repo = repos.project_repo
         
-        # Получаем рекомендации
         recommendations = await engine.get_recommendations(
             student_id=student_id,
             student_repo=student_repo,
@@ -34,7 +32,6 @@ async def get_student_recommendations(
             top_n=top_n
         )
         
-        # Преобразуем в Pydantic модель
         return [
             RecommendationResponse(
                 project_id=rec["project_id"],
