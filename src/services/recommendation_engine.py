@@ -1,4 +1,4 @@
-from typing import Dict, List, Optional # Added Optional for type hinting
+from typing import Dict, List, Optional
 from .recommendation_model import RecommendationService
 from db.project_repository import ProjectRepository
 from db.student_repository import StudentRepository

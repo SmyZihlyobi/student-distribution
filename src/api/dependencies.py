@@ -1,12 +1,9 @@
-# app/dependencies.py
-from services.recommendation_service import RecommendationService
+from services.recommendation_model import RecommendationService
 from services.recommendation_engine import RecommendationEngine
 import os
 
 def get_recommendation_service():
-    model_dir = os.getenv('MODEL_DIR', './models')
-    return RecommendationService(model_dir)
+    return RecommendationService()
 
 def get_recommendation_engine():
-    # pyright: ignore
     return RecommendationEngine(get_recommendation_service())

@@ -29,6 +29,24 @@ class TwoTowerModel(nn.Module):
         project_embedding = self.project_tower(project_features)
         return F.cosine_similarity(student_embedding, project_embedding, dim=1)
 
+import torch
+import numpy as np
+from typing import Dict, List
+from sentence_transformers import SentenceTransformer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from db.models import Student, Project
+
+class TwoTowerModel(torch.nn.Module):
+    def __init__(self, student_dim: int, project_dim: int):
+        super().__init__()
+        self.student_tower = torch.nn.Linear(student_dim, 128)
+        self.project_tower = torch.nn.Linear(project_dim, 128)
+        
+    def forward(self, student_features, project_features):
+        student_emb = self.student_tower(student_features)
+        project_emb = self.project_tower(project_features)
+        return torch.nn.functional.cosine_similarity(student_emb, project_emb)
+
 class RecommendationService:
     def __init__(self):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

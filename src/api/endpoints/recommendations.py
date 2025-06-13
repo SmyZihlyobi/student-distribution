@@ -1,10 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List
 from pydantic import BaseModel
-from sqlalchemy.ext.asyncio import AsyncSession
 from services.recommendation_engine import RecommendationEngine
 from db import get_repositories
-
+from api.dependencies import get_recommendation_engine
 
 router = APIRouter(prefix="/recommendations", tags=["recommendations"])
 
@@ -15,13 +14,12 @@ class RecommendationResponse(BaseModel):
     required_stack: str
     required_roles: str
 
-# pyright: ignore
 @router.get("/student/{student_id}", response_model=List[RecommendationResponse])
 async def get_student_recommendations(
     student_id: int,
     top_n: int = 5,
     repos: dict = Depends(get_repositories),
-    engine: RecommendationEngine = Depends()
+    engine: RecommendationEngine = Depends(get_recommendation_engine)
 ):
     try:
         # Получаем репозитории
