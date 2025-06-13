@@ -1,9 +1,7 @@
-from services.recommendation_model import RecommendationService
 from services.recommendation_engine import RecommendationEngine
-import os
+from fastapi import Request
 
-def get_recommendation_service():
-    return RecommendationService()
+def get_recommendation_engine(request: Request) -> RecommendationEngine:
+    """Обёртка для получения RecommendationEngine из FastAPI"""
+    return request.app.state.recommendation_engine
 
-def get_recommendation_engine():
-    return RecommendationEngine(get_recommendation_service())

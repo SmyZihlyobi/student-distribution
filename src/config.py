@@ -5,10 +5,10 @@ class Settings(BaseSettings):
     POSTGRES_PASSWORD: str = "pwd"
     POSTGRES_DB: str = "project-practice-api"
     DB_HOST: str = "localhost"
-    MINIO_ROOT_USER: str = "7fcc12fdc2d1"
-    MINIO_ROOT_PASSWORD: str = "96a19220ee73"
+    MINIO_ROOT_USER: str = "minio"
+    MINIO_ROOT_PASSWORD: str = "pwd"
     MINIO_ENDPOINT: str = "http://localhost:9000"
-    MODEL_DIR: str = 'C:\\Users\\malko\\PycharmProjects\\student_vectorizer\\distribution\\src\\models'
+    MODEL_DIR: str = 'models'
     POSTGRES_PORT: int = 5432
     AI: str = ""
 
