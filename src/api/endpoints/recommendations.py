@@ -10,7 +10,9 @@ router = APIRouter(prefix="/recommendations", tags=["recommendations"])
 class RecommendationResponse(BaseModel):
     project_id: int
     project_name: str
-    match_score: float
+    final_score: float # Renamed from match_score
+    base_similarity: float # New field
+    bonus_score: float # New field
     required_stack: str
     required_roles: str
 
@@ -52,7 +54,9 @@ async def get_student_recommendations(
         RecommendationResponse(
             project_id=rec["project_id"],
             project_name=rec["project_name"],
-            match_score=rec["match_score"],
+            final_score=rec["final_score"], # Updated field name
+            base_similarity=rec["base_similarity"], # New field
+            bonus_score=rec["bonus_score"], # New field
             required_stack=rec["required_stack"],
             required_roles=rec["required_roles"]
         )
