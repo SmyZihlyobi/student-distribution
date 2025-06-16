@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from api.endpoints import recommendations
+from api.endpoints.recommendations import recommendation_router
 from db.database import db
 from contextlib import asynccontextmanager
 from services.recommendation_service import RecommendationService
@@ -37,7 +37,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(recommendations.router)
+app.include_router(recommendation_router)
 
 if __name__ == "__main__":
     import uvicorn
