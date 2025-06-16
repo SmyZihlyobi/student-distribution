@@ -5,20 +5,20 @@ from services.recommendation_engine import RecommendationEngine
 from db import get_repositories, Repositories
 from api.dependencies import get_recommendation_engine
 
-router = APIRouter(prefix="/recommendations", tags=["recommendations"])
+recommendation_router = APIRouter(prefix="/recommendations", tags=["recommendations"])
 
 class RecommendationResponse(BaseModel):
     project_id: int
     project_name: str
-    final_score: float # Renamed from match_score
-    base_similarity: float # New field
-    bonus_score: float # New field
+    final_score: float
+    base_similarity: float
+    bonus_score: float
     required_stack: str
     required_roles: str
 
 recommendations_cache: Dict[tuple, List[Dict[str, Any]]] = {}
 
-@router.get("/student/{student_id}", response_model=List[RecommendationResponse])
+@recommendation_router.get("/student/{student_id}", response_model=List[RecommendationResponse])
 async def get_student_recommendations(
     student_id: int,
     top_n: int = 5,
@@ -54,9 +54,9 @@ async def get_student_recommendations(
         RecommendationResponse(
             project_id=rec["project_id"],
             project_name=rec["project_name"],
-            final_score=rec["final_score"], # Updated field name
-            base_similarity=rec["base_similarity"], # New field
-            bonus_score=rec["bonus_score"], # New field
+            final_score=rec["final_score"],
+            base_similarity=rec["base_similarity"],
+            bonus_score=rec["bonus_score"],
             required_stack=rec["required_stack"],
             required_roles=rec["required_roles"]
         )

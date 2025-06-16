@@ -1,8 +1,8 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
-    POSTGRES_USER: str = "pg"
-    POSTGRES_PASSWORD: str = "pwd"
+    POSTGRES_USER: str = "postgres"
+    POSTGRES_PASSWORD: str = "postgres_secret"
     POSTGRES_DB: str = "project-practice-api"
     DB_HOST: str = "localhost"
     MODEL_DIR: str = 'models'

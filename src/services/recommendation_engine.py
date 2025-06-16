@@ -14,17 +14,16 @@ class RecommendationEngine:
         student_repo: StudentRepository,
         project_repo: ProjectRepository,
         top_n: int = 5,
-        bonus_per_match: float = 0.05 # New parameter
+        bonus_per_match: float = 0.05
     ) -> List[Dict]:
         student = await student_repo.get_student_by_id(student_id=student_id)
         if not student:
             raise ValueError(f"Student {student_id} not found")
 
-        if not student.stack: # Assuming student.stack should exist
+        if not student.stack:
             raise ValueError(f"Student {student_id} has no stack information.")
 
-        # Use Union for type hint if Python < 3.10, otherwise | is fine for parse_string's signature
-        # from src.services.recommendation_service import parse_string
+
         student_stack_list = parse_string(student.stack)
         student_stack_set = set(student_stack_list)
 
@@ -32,7 +31,7 @@ class RecommendationEngine:
         if not projects:
             return []
 
-        scores = await self.model_service.predict_for_student(student, projects) # This returns Dict[project_id, score]
+        scores = await self.model_service.predict_for_student(student, projects)
 
         project_score_pairs = []
         for p in projects:
@@ -46,14 +45,14 @@ class RecommendationEngine:
 
         sorted_initial_candidates = sorted(
             project_score_pairs,
-            key=lambda x: x[1], # x[1] is the score
+            key=lambda x: x[1],
             reverse=True
         )[:candidate_count]
 
         processed_candidates = []
         for project_obj, base_similarity in sorted_initial_candidates:
             project_stack_list = []
-            if project_obj.stack: # Project stack can be None
+            if project_obj.stack:
                 project_stack_list = parse_string(project_obj.stack)
             project_stack_set = set(project_stack_list)
 
@@ -67,8 +66,8 @@ class RecommendationEngine:
                 "final_score": final_s,
                 "base_similarity": base_similarity,
                 "bonus_score": bonus,
-                "required_stack": project_obj.stack if project_obj.stack else "", # Ensure not None for output
-                "required_roles": project_obj.required_roles if project_obj.required_roles else "" # Ensure not None
+                "required_stack": project_obj.stack if project_obj.stack else "",
+                "required_roles": project_obj.required_roles if project_obj.required_roles else ""
             })
 
         final_recommendations_sorted = sorted(
